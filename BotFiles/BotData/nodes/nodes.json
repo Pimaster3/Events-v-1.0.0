@@ -1,0 +1,5585 @@
+{
+  "nodes": [
+    {
+      "type": "response",
+      "name": "Send Embed Poll",
+      "guid": "23062d26-69eb-4fae-b3fe-22d3cad9fac9",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "poll_ask_title_message",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "49e59f7e-c8d6-49fc-8ef5-9790b3e3e121"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "46ed4ec2-45a2-4952-aebb-6c7eded0184c"
+        }
+      ],
+      "x": 105,
+      "y": 314,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "Let's set up your **poll**! first of all what should the **title** be?",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "poll_ask_title_message",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Await User Message",
+      "guid": "49e59f7e-c8d6-49fc-8ef5-9790b3e3e121",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "d8f1b943-98a1-4fa9-ae80-a6654dc119d0"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "23062d26-69eb-4fae-b3fe-22d3cad9fac9"
+        }
+      ],
+      "x": 107,
+      "y": 376,
+      "rtype": "Message",
+      "rsubtype": "Await User Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${dbsVars.CommandAuthor.id}",
+        "0",
+        "Send Embed Poll_1",
+        "",
+        "content",
+        "poll_title",
+        "temp"
+      ],
+      "formnames": [
+        "channelid",
+        "userid",
+        "time",
+        "true",
+        "false",
+        "dropdown",
+        "variablename",
+        "variabletype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll_1",
+      "guid": "d8f1b943-98a1-4fa9-ae80-a6654dc119d0",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "poll_ask_description_message",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "ba8ea381-a9ae-447b-8adc-3391f86feb8c"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "49e59f7e-c8d6-49fc-8ef5-9790b3e3e121"
+        }
+      ],
+      "x": 106,
+      "y": 437,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "Great, the poll will be named \n\"**${tempVars.poll_title}**\".\nWhat do you want the description to be?",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "poll_ask_description_message",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Await User Message_1",
+      "guid": "ba8ea381-a9ae-447b-8adc-3391f86feb8c",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "885f0273-0433-4936-8011-5b3496043bbe"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "d8f1b943-98a1-4fa9-ae80-a6654dc119d0"
+        }
+      ],
+      "x": 108,
+      "y": 497,
+      "rtype": "Message",
+      "rsubtype": "Await User Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${dbsVars.CommandAuthor.id}",
+        "30",
+        "Send Embed Poll_2",
+        "",
+        "content",
+        "poll_description",
+        "temp"
+      ],
+      "formnames": [
+        "channelid",
+        "userid",
+        "time",
+        "true",
+        "false",
+        "dropdown",
+        "variablename",
+        "variabletype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "poll",
+      "guid": "ef0f0fd7-a86c-4ca9-9542-13124d64c43d",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "46ed4ec2-45a2-4952-aebb-6c7eded0184c"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 105,
+      "y": 103,
+      "perms": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll_3",
+      "guid": "02b36c76-90df-491f-a332-66a9fb1c2e96",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "cf60ff8f-b5bd-4e41-9e35-882f843bd1d3"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "a58a7eb9-4826-4463-9210-65a5170af68d"
+        }
+      ],
+      "x": 505,
+      "y": 102,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "What a great choice, you can now setup your options!\n\nPlease enter the `first` option.\n1️⃣ = null\n2️⃣ = null",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Await User Message_2",
+      "guid": "cf60ff8f-b5bd-4e41-9e35-882f843bd1d3",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "f3be93fb-2c50-4938-aba3-22d3d285e2ec"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "02b36c76-90df-491f-a332-66a9fb1c2e96"
+        }
+      ],
+      "x": 505,
+      "y": 163,
+      "rtype": "Message",
+      "rsubtype": "Await User Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${dbsVars.CommandAuthor.id}",
+        "0",
+        "Send Embed Poll_4",
+        "",
+        "content",
+        "poll_option_1",
+        "temp"
+      ],
+      "formnames": [
+        "channelid",
+        "userid",
+        "time",
+        "true",
+        "false",
+        "dropdown",
+        "variablename",
+        "variabletype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll_4",
+      "guid": "f3be93fb-2c50-4938-aba3-22d3d285e2ec",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "991ab416-0cad-4687-9bb7-e9796830c0d2"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "cf60ff8f-b5bd-4e41-9e35-882f843bd1d3"
+        }
+      ],
+      "x": 506,
+      "y": 221,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "Please enter the `seccond` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = null",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Await User Message_3",
+      "guid": "991ab416-0cad-4687-9bb7-e9796830c0d2",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "2dc48e5a-8ea6-41e1-a245-c5216802f4a3"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "f3be93fb-2c50-4938-aba3-22d3d285e2ec"
+        }
+      ],
+      "x": 507,
+      "y": 282,
+      "rtype": "Message",
+      "rsubtype": "Await User Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${dbsVars.CommandAuthor.id}",
+        "0",
+        "Send Poll",
+        "",
+        "content",
+        "poll_option_2",
+        "temp"
+      ],
+      "formnames": [
+        "channelid",
+        "userid",
+        "time",
+        "true",
+        "false",
+        "dropdown",
+        "variablename",
+        "variabletype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Store Value in Variable",
+      "guid": "3b55ea43-4330-4ddf-a342-b021e4b6631d",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "changelogs_version",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "09ababaa-9341-47ef-b3e3-e9cb343ca9e3"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "6d858114-8f13-4197-bcc5-567e5a7ac2ff"
+        }
+      ],
+      "x": 2112,
+      "y": 384,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "changelogs_version",
+        "Text",
+        "temp",
+        "1"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Store Value in Variable_1",
+      "guid": "09ababaa-9341-47ef-b3e3-e9cb343ca9e3",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "changelogs_description",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "c664d520-3987-4330-b9db-64b5cc7b3905"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "3b55ea43-4330-4ddf-a342-b021e4b6631d"
+        }
+      ],
+      "x": 2115,
+      "y": 444,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "changelogs_description",
+        "Text",
+        "temp",
+        "2+"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Changelogs",
+      "guid": "c664d520-3987-4330-b9db-64b5cc7b3905",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "f4b891bb-820c-4e9a-8571-02c31eab2bb7"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "09ababaa-9341-47ef-b3e3-e9cb343ca9e3"
+        }
+      ],
+      "x": 2119,
+      "y": 504,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "AAAAAA",
+        "Changelog ${tempVars.changelogs_version}",
+        "",
+        "",
+        "",
+        "",
+        "${tempVars.changelogs_description}",
+        "https://eventsbot.weebly.com/uploads/1/2/3/5/123512837/depositphotos-97489290-stock-illustration-repair-service-icon_orig.jpg",
+        "",
+        "${dbsVars.guild.name}",
+        "BOOL_TRUE@@",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Delete changelogs command",
+      "guid": "f4b891bb-820c-4e9a-8571-02c31eab2bb7",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "c664d520-3987-4330-b9db-64b5cc7b3905"
+        }
+      ],
+      "x": 2120,
+      "y": 566,
+      "rtype": "Message",
+      "rsubtype": "Delete Message",
+      "formdata": [
+        "${dbsVars.CommandMessage.id}",
+        "${dbsVars.CommandChannel.id}"
+      ],
+      "formnames": [
+        "varname",
+        "channelName"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "changelog",
+      "guid": "611f5a33-a2c6-4521-b9c8-46894f3ffb97",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "6d858114-8f13-4197-bcc5-567e5a7ac2ff"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 2104,
+      "y": 102
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Invite",
+      "guid": "b487479d-75bb-46bf-a0fd-e8fdda946b66",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "b1d4aa79-4307-4fd5-8f21-04e0661721fe"
+        }
+      ],
+      "x": 3005,
+      "y": 205,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "520F94",
+        "",
+        "",
+        "🔗  | Click Here to invite Events",
+        "",
+        "https://discord.com/api/oauth2/authorize?client_id=972564503747264613&permissions=8&scope=bot",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "invite",
+      "guid": "b1d4aa79-4307-4fd5-8f21-04e0661721fe",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "b487479d-75bb-46bf-a0fd-e8fdda946b66"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 3003,
+      "y": 103
+    },
+    {
+      "type": "command",
+      "name": "say",
+      "guid": "c71662dd-edfd-4d5c-ac40-371577726034",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "050aa2dd-e274-4e7b-b247-3160a9794872"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 2305,
+      "y": 106
+    },
+    {
+      "type": "response",
+      "name": "Store Value in Variable_2",
+      "guid": "38f83ec8-2d74-470a-8abb-88cf0ce08953",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "say_embed_or_normal",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "c2a02920-d8c0-4796-9801-104240fe567f"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "050aa2dd-e274-4e7b-b247-3160a9794872"
+        }
+      ],
+      "x": 2309,
+      "y": 384,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "say_embed_or_normal",
+        "Text",
+        "temp",
+        "1"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Store Value in Variable_3",
+      "guid": "c2a02920-d8c0-4796-9801-104240fe567f",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "say_message",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "54a7ad63-b83d-4573-ac2b-4f2ef6585a69"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "38f83ec8-2d74-470a-8abb-88cf0ce08953"
+        }
+      ],
+      "x": 2311,
+      "y": 447,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "say_message",
+        "Text",
+        "temp",
+        "2+"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check User Permissions",
+      "guid": "70f5cc60-c5de-4884-a459-fb485b5742b4",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "b9a3ac55-a6f3-4523-b89a-2109581dd893"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "56adfe42-32f8-495f-a40d-db02e6032c85"
+        }
+      ],
+      "x": 3204,
+      "y": 204,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "VIEW_AUDIT_LOG"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check User Permissions_1",
+      "guid": "6d858114-8f13-4197-bcc5-567e5a7ac2ff",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "3b55ea43-4330-4ddf-a342-b021e4b6631d"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "611f5a33-a2c6-4521-b9c8-46894f3ffb97"
+        }
+      ],
+      "x": 2107,
+      "y": 205,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "ADMINISTRATOR"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check User Permissions_2",
+      "guid": "050aa2dd-e274-4e7b-b247-3160a9794872",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "38f83ec8-2d74-470a-8abb-88cf0ce08953"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "c71662dd-edfd-4d5c-ac40-371577726034"
+        }
+      ],
+      "x": 2308,
+      "y": 204,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "VIEW_AUDIT_LOG"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check User Permissions_3",
+      "guid": "46ed4ec2-45a2-4952-aebb-6c7eded0184c",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "23062d26-69eb-4fae-b3fe-22d3cad9fac9"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ef0f0fd7-a86c-4ca9-9542-13124d64c43d"
+        }
+      ],
+      "x": 107,
+      "y": 144,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "MANAGE_CHANNELS",
+          "MENTION_EVERYONE"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "help",
+      "guid": "56adfe42-32f8-495f-a40d-db02e6032c85",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "70f5cc60-c5de-4884-a459-fb485b5742b4"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 3204,
+      "y": 106
+    },
+    {
+      "type": "command",
+      "name": "poll-generate",
+      "guid": "ae0fbf34-b0a9-468b-96e4-eabc06fc1074",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "306bce1d-d5c5-4622-bb2f-d48f3e3d1790"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 1305,
+      "y": 102,
+      "perms": []
+    },
+    {
+      "type": "response",
+      "name": "Check User Permissions_4",
+      "guid": "306bce1d-d5c5-4622-bb2f-d48f3e3d1790",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "ce4b794e-51a9-43c5-8d7e-6f548fa292f8"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ae0fbf34-b0a9-468b-96e4-eabc06fc1074"
+        }
+      ],
+      "x": 1305,
+      "y": 205,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "MANAGE_CHANNELS",
+          "MENTION_EVERYONE"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check Variable Value",
+      "guid": "54a7ad63-b83d-4573-ac2b-4f2ef6585a69",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "490d5ac3-513b-414d-8ad5-1e84bcaa8118"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "59a75c1e-a394-43c2-9575-66e11e778997"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "c2a02920-d8c0-4796-9801-104240fe567f"
+        }
+      ],
+      "x": 2315,
+      "y": 509,
+      "rtype": "Variable",
+      "rsubtype": "Check Variable Value",
+      "formdata": [
+        "say_embed_or_normal",
+        "temp",
+        "equal to",
+        "Normal"
+      ],
+      "formnames": [
+        "varname",
+        "saveVarType",
+        "compare",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check Variable Value_1",
+      "guid": "59a75c1e-a394-43c2-9575-66e11e778997",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "490d5ac3-513b-414d-8ad5-1e84bcaa8118"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "01a22e98-012c-4d82-9022-8852c1647234"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "54a7ad63-b83d-4573-ac2b-4f2ef6585a69"
+        }
+      ],
+      "x": 2319,
+      "y": 570,
+      "rtype": "Variable",
+      "rsubtype": "Check Variable Value",
+      "formdata": [
+        "say_embed_or_normal",
+        "temp",
+        "equal to",
+        "normal"
+      ],
+      "formnames": [
+        "varname",
+        "saveVarType",
+        "compare",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check Variable Value_2",
+      "guid": "01a22e98-012c-4d82-9022-8852c1647234",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "73cba671-f3b2-44f9-bf02-b00c606440ef"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "25a43111-9066-466d-8d6d-673e43068149"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "59a75c1e-a394-43c2-9575-66e11e778997"
+        }
+      ],
+      "x": 2322,
+      "y": 634,
+      "rtype": "Variable",
+      "rsubtype": "Check Variable Value",
+      "formdata": [
+        "say_embed_or_normal",
+        "temp",
+        "equal to",
+        "Embed"
+      ],
+      "formnames": [
+        "varname",
+        "saveVarType",
+        "compare",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check Variable Value_3",
+      "guid": "25a43111-9066-466d-8d6d-673e43068149",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "73cba671-f3b2-44f9-bf02-b00c606440ef"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "c59cd089-62e6-44ff-b2c1-dd7b2e6a3c19"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "01a22e98-012c-4d82-9022-8852c1647234"
+        }
+      ],
+      "x": 2325,
+      "y": 693,
+      "rtype": "Variable",
+      "rsubtype": "Check Variable Value",
+      "formdata": [
+        "say_embed_or_normal",
+        "temp",
+        "equal to",
+        "embed"
+      ],
+      "formnames": [
+        "varname",
+        "saveVarType",
+        "compare",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Message Error",
+      "guid": "c59cd089-62e6-44ff-b2c1-dd7b2e6a3c19",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "error_message_say",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "3ae1124d-1be7-4045-b285-74242bbee8ca"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "25a43111-9066-466d-8d6d-673e43068149"
+        }
+      ],
+      "x": 2327,
+      "y": 754,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "Please choose **one** of the following options:\n- **Embed**\n- **Normal**\nPlease try again.",
+        "error_message_say",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Message Error_1",
+      "guid": "b97fbbe3-5f8f-46ac-ab57-fc67ce85ba77",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "error_message_say",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "3ae1124d-1be7-4045-b285-74242bbee8ca"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "61b43336-87fb-48fb-85d5-645fdd941361"
+        }
+      ],
+      "x": 2816,
+      "y": 424,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "**ERROR 433**\nYou didn't enter a message. Enter the message that **Events** should send after choosing embed or normal.\n\nPlease try again.",
+        "error_message_say",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Multiple Input_1",
+      "guid": "73cba671-f3b2-44f9-bf02-b00c606440ef",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "146a2f39-29c7-405d-959b-910de4028416"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "01a22e98-012c-4d82-9022-8852c1647234"
+        },
+        {
+          "label": "trigger",
+          "id": "25a43111-9066-466d-8d6d-673e43068149"
+        }
+      ],
+      "x": 2660,
+      "y": 197,
+      "rtype": "Control",
+      "rsubtype": "Multiple Input",
+      "messageActionRows": []
+    },
+    {
+      "type": "response",
+      "name": "Multiple Input",
+      "guid": "490d5ac3-513b-414d-8ad5-1e84bcaa8118",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "4c382e1f-c66b-45a9-926e-d2940171e389"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "54a7ad63-b83d-4573-ac2b-4f2ef6585a69"
+        },
+        {
+          "label": "trigger",
+          "id": "59a75c1e-a394-43c2-9575-66e11e778997"
+        }
+      ],
+      "x": 2504,
+      "y": 204,
+      "rtype": "Control",
+      "rsubtype": "Multiple Input",
+      "messageActionRows": []
+    },
+    {
+      "type": "response",
+      "name": "Multiple Input_2",
+      "guid": "61b43336-87fb-48fb-85d5-645fdd941361",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "b97fbbe3-5f8f-46ac-ab57-fc67ce85ba77"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "4c382e1f-c66b-45a9-926e-d2940171e389"
+        },
+        {
+          "label": "trigger",
+          "id": "146a2f39-29c7-405d-959b-910de4028416"
+        }
+      ],
+      "x": 2832,
+      "y": 194,
+      "rtype": "Control",
+      "rsubtype": "Multiple Input",
+      "messageActionRows": []
+    },
+    {
+      "type": "response",
+      "name": "Multiple Input_3",
+      "guid": "3ae1124d-1be7-4045-b285-74242bbee8ca",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "5b43e2a9-3dcf-4921-97f2-bfc0621f0842"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "b97fbbe3-5f8f-46ac-ab57-fc67ce85ba77"
+        },
+        {
+          "label": "trigger",
+          "id": "c59cd089-62e6-44ff-b2c1-dd7b2e6a3c19"
+        }
+      ],
+      "x": 2820,
+      "y": 486,
+      "rtype": "Control",
+      "rsubtype": "Multiple Input",
+      "messageActionRows": []
+    },
+    {
+      "type": "response",
+      "name": "Send Normal Message Say",
+      "guid": "5dd9492c-8442-4fa6-9418-ddfccc775f1e",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "4c382e1f-c66b-45a9-926e-d2940171e389"
+        }
+      ],
+      "x": 2659,
+      "y": 405,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${tempVars.say_message}",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Message Say",
+      "guid": "7b1e4f26-52cb-4abb-9496-86005bfe39f7",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "146a2f39-29c7-405d-959b-910de4028416"
+        }
+      ],
+      "x": 2659,
+      "y": 466,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "520F94",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "${tempVars.say_message}",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Wait 5s",
+      "guid": "5b43e2a9-3dcf-4921-97f2-bfc0621f0842",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "53d49bf1-af67-4453-bc26-e18f296e108d"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "3ae1124d-1be7-4045-b285-74242bbee8ca"
+        }
+      ],
+      "x": 2821,
+      "y": 546,
+      "rtype": "Bot Action",
+      "rsubtype": "Edited Wait",
+      "formdata": [
+        "10"
+      ],
+      "formnames": [
+        "seconds"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check If Poll Options Count Exists",
+      "guid": "34569b6a-64ea-4fe6-beb7-64771397e260",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "c4f89442-86b6-4565-982e-b4e55671d170"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "74b8f670-0ef9-4239-bee1-203cd34663fa"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "885f0273-0433-4936-8011-5b3496043bbe"
+        }
+      ],
+      "x": 110,
+      "y": 695,
+      "rtype": "Variable",
+      "rsubtype": "Check If Variable Exists",
+      "formdata": [
+        "poll_option_count",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "saveVarType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Multiple Input_4",
+      "guid": "c4f89442-86b6-4565-982e-b4e55671d170",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "a58a7eb9-4826-4463-9210-65a5170af68d"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "34569b6a-64ea-4fe6-beb7-64771397e260"
+        },
+        {
+          "label": "trigger",
+          "id": "74b8f670-0ef9-4239-bee1-203cd34663fa"
+        }
+      ],
+      "x": 301,
+      "y": 101,
+      "rtype": "Control",
+      "rsubtype": "Multiple Input",
+      "messageActionRows": []
+    },
+    {
+      "type": "response",
+      "name": "GRN",
+      "guid": "74b8f670-0ef9-4239-bee1-203cd34663fa",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "c4f89442-86b6-4565-982e-b4e55671d170"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "34569b6a-64ea-4fe6-beb7-64771397e260"
+        }
+      ],
+      "x": 109,
+      "y": 779,
+      "rtype": "Variable",
+      "rsubtype": "Generate Random Number",
+      "formdata": [
+        "poll_option_count",
+        "0",
+        "0",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "min",
+        "max",
+        "saveVarType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check Variable Value_4",
+      "guid": "ce4b794e-51a9-43c5-8d7e-6f548fa292f8",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "9cc1d924-7b11-4b77-b5fe-12c4510c9b64"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "3f5c62f4-2bb0-4d13-be88-9dd806991f9c"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "306bce1d-d5c5-4622-bb2f-d48f3e3d1790"
+        }
+      ],
+      "x": 1310,
+      "y": 378,
+      "rtype": "Variable",
+      "rsubtype": "Check Variable Value",
+      "formdata": [
+        "poll_option_count",
+        "temp",
+        "equal to",
+        "2"
+      ],
+      "formnames": [
+        "varname",
+        "saveVarType",
+        "compare",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check Variable Value_4_1",
+      "guid": "3f5c62f4-2bb0-4d13-be88-9dd806991f9c",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "137b8875-39c0-4a72-b9cd-ed5317a5db65"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "ac07a7cc-2b7d-4595-8345-4d05c3f62731"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ce4b794e-51a9-43c5-8d7e-6f548fa292f8"
+        }
+      ],
+      "x": 1312,
+      "y": 436,
+      "rtype": "Variable",
+      "rsubtype": "Check Variable Value",
+      "formdata": [
+        "poll_option_count",
+        "temp",
+        "equal to",
+        "3"
+      ],
+      "formnames": [
+        "varname",
+        "saveVarType",
+        "compare",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check Variable Value_4_2",
+      "guid": "ac07a7cc-2b7d-4595-8345-4d05c3f62731",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "dbc7d7e3-355c-47b9-95dd-2a86505a9bff"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "6f1aed5c-fee2-4479-a001-e27579c5a7fb"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "3f5c62f4-2bb0-4d13-be88-9dd806991f9c"
+        }
+      ],
+      "x": 1313,
+      "y": 495,
+      "rtype": "Variable",
+      "rsubtype": "Check Variable Value",
+      "formdata": [
+        "poll_option_count",
+        "temp",
+        "equal to",
+        "4"
+      ],
+      "formnames": [
+        "varname",
+        "saveVarType",
+        "compare",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Delete ERROR Message Say",
+      "guid": "53d49bf1-af67-4453-bc26-e18f296e108d",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "5b43e2a9-3dcf-4921-97f2-bfc0621f0842"
+        }
+      ],
+      "x": 2822,
+      "y": 582,
+      "rtype": "Message",
+      "rsubtype": "Delete Message",
+      "formdata": [
+        "${tempVars.error_message_say.id}",
+        "${dbsVars.CommandChannel.id}"
+      ],
+      "formnames": [
+        "varname",
+        "channelName"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll_2",
+      "guid": "885f0273-0433-4936-8011-5b3496043bbe",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "poll_ask_option_count_message",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "34569b6a-64ea-4fe6-beb7-64771397e260"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ba8ea381-a9ae-447b-8adc-3391f86feb8c"
+        }
+      ],
+      "x": 110,
+      "y": 559,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "Fantastic, the discription will be \"\n**${tempVars.poll_description}**\".\nHow many `options` do you want?",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "poll_ask_option_count_message",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check Variable Value_4_3",
+      "guid": "6f1aed5c-fee2-4479-a001-e27579c5a7fb",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "2c578559-04f9-4bde-a68d-aa350a5106cf"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ac07a7cc-2b7d-4595-8345-4d05c3f62731"
+        }
+      ],
+      "x": 1314,
+      "y": 555,
+      "rtype": "Variable",
+      "rsubtype": "Check Variable Value",
+      "formdata": [
+        "poll_option_count",
+        "temp",
+        "equal to",
+        "5"
+      ],
+      "formnames": [
+        "varname",
+        "saveVarType",
+        "compare",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll_3_1",
+      "guid": "4b38182c-2955-47d8-963d-cd933d560964",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "00bd79c7-5be1-40fb-81bb-218de121068b"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "a58a7eb9-4826-4463-9210-65a5170af68d"
+        }
+      ],
+      "x": 702,
+      "y": 102,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "What a great choice, you can now setup your options!\n\nPlease enter the `first` option.\n1️⃣ = null\n2️⃣ = null\n3️⃣ = null\n",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Await User Message_2_1",
+      "guid": "00bd79c7-5be1-40fb-81bb-218de121068b",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "5624480d-f7d6-4476-938d-3a9975c30459"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "4b38182c-2955-47d8-963d-cd933d560964"
+        }
+      ],
+      "x": 705,
+      "y": 164,
+      "rtype": "Message",
+      "rsubtype": "Await User Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${dbsVars.CommandAuthor.id}",
+        "0",
+        "Send Embed Poll_4_1",
+        "",
+        "content",
+        "poll_option_1",
+        "temp"
+      ],
+      "formnames": [
+        "channelid",
+        "userid",
+        "time",
+        "true",
+        "false",
+        "dropdown",
+        "variablename",
+        "variabletype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll_4_1",
+      "guid": "5624480d-f7d6-4476-938d-3a9975c30459",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "8aad3774-7a8f-4ea0-9d0f-185172c27e62"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "00bd79c7-5be1-40fb-81bb-218de121068b"
+        }
+      ],
+      "x": 708,
+      "y": 226,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "Please enter the `seccond` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = null\n3️⃣ = null",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Await User Message_3_1",
+      "guid": "8aad3774-7a8f-4ea0-9d0f-185172c27e62",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "a34962e5-7012-4e36-bc34-03f96536b49d"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "5624480d-f7d6-4476-938d-3a9975c30459"
+        }
+      ],
+      "x": 710,
+      "y": 286,
+      "rtype": "Message",
+      "rsubtype": "Await User Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${dbsVars.CommandAuthor.id}",
+        "0",
+        "Send Embed Poll_5_1",
+        "",
+        "content",
+        "poll_option_2",
+        "temp"
+      ],
+      "formnames": [
+        "channelid",
+        "userid",
+        "time",
+        "true",
+        "false",
+        "dropdown",
+        "variablename",
+        "variabletype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll_5_1",
+      "guid": "a34962e5-7012-4e36-bc34-03f96536b49d",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "b772de57-807b-4f20-ad44-ed3e3f32ecf2"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "8aad3774-7a8f-4ea0-9d0f-185172c27e62"
+        }
+      ],
+      "x": 710,
+      "y": 347,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "Please enter the `third` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = null\n",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Await User Message_4",
+      "guid": "b772de57-807b-4f20-ad44-ed3e3f32ecf2",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "aa465c97-11d9-46d6-8c01-c2a53976feb3"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "a34962e5-7012-4e36-bc34-03f96536b49d"
+        }
+      ],
+      "x": 712,
+      "y": 405,
+      "rtype": "Message",
+      "rsubtype": "Await User Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${dbsVars.CommandAuthor.id}",
+        "0",
+        "Send Embed Poll_6",
+        "",
+        "content",
+        "poll_option_3",
+        "temp"
+      ],
+      "formnames": [
+        "channelid",
+        "userid",
+        "time",
+        "true",
+        "false",
+        "dropdown",
+        "variablename",
+        "variabletype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll_6",
+      "guid": "aa465c97-11d9-46d6-8c01-c2a53976feb3",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "5ebc28c3-3f25-48cd-afab-79646b7cc4ab"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "b772de57-807b-4f20-ad44-ed3e3f32ecf2"
+        }
+      ],
+      "x": 713,
+      "y": 464,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Poll_1",
+      "guid": "5ebc28c3-3f25-48cd-afab-79646b7cc4ab",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "31af5434-8237-45aa-a124-c114d3819b34"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "aa465c97-11d9-46d6-8c01-c2a53976feb3"
+        }
+      ],
+      "x": 715,
+      "y": 525,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 | **${tempVars.poll_title}**",
+        "",
+        "",
+        "",
+        "",
+        "${tempVars.poll_description}\n\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n\nThis will be your poll please type `!poll-generate` in the channel you want the poll to be in!",
+        "",
+        "",
+        "Asked to ${dbsVars.guild.memberCount} Members",
+        "BOOL_TRUE@@",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "GRN_2",
+      "guid": "31af5434-8237-45aa-a124-c114d3819b34",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "5ebc28c3-3f25-48cd-afab-79646b7cc4ab"
+        }
+      ],
+      "x": 719,
+      "y": 561,
+      "rtype": "Variable",
+      "rsubtype": "Generate Random Number",
+      "formdata": [
+        "poll_option_count",
+        "3",
+        "3",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "min",
+        "max",
+        "saveVarType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Poll_2",
+      "guid": "9cc1d924-7b11-4b77-b5fe-12c4510c9b64",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "poll_2",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "2254f284-7bda-44c1-8afd-2723f1a7a712",
+            "b207b786-0953-4cf8-bc79-d0e6f404b73b",
+            "af69425c-92b8-4804-a24e-eba08c261ff6"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ce4b794e-51a9-43c5-8d7e-6f548fa292f8"
+        }
+      ],
+      "x": 1502,
+      "y": 204,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 | **${tempVars.poll_title}**",
+        "",
+        "",
+        "",
+        "",
+        "${tempVars.poll_description}\n\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}",
+        "",
+        "",
+        "Asked to ${dbsVars.guild.memberCount} Members",
+        "BOOL_TRUE@@",
+        "poll_2",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Reaction Listener Poll_2",
+      "guid": "2254f284-7bda-44c1-8afd-2723f1a7a712",
+      "reactionFields": [
+        "1️⃣",
+        "2️⃣"
+      ],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "1️⃣",
+          "connections": []
+        },
+        {
+          "label": "2️⃣",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "9cc1d924-7b11-4b77-b5fe-12c4510c9b64"
+        }
+      ],
+      "x": 1501,
+      "y": 239,
+      "rtype": "Reaction",
+      "rsubtype": "Add Reaction Listener",
+      "formdata": [
+        "${tempVars.poll_2.id}",
+        "0",
+        "poll_2_emoji",
+        "poll_2_user",
+        "BOOL_TRUE@@"
+      ],
+      "formnames": [
+        "message",
+        "duration",
+        "reactionemoji",
+        "reactionuser",
+        "react"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Poll_3",
+      "guid": "137b8875-39c0-4a72-b9cd-ed5317a5db65",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "poll_3",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "7413bb0f-3851-426c-a7a8-67678d594577",
+            "b207b786-0953-4cf8-bc79-d0e6f404b73b",
+            "af69425c-92b8-4804-a24e-eba08c261ff6"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "3f5c62f4-2bb0-4d13-be88-9dd806991f9c"
+        }
+      ],
+      "x": 1505,
+      "y": 422,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 | **${tempVars.poll_title}**",
+        "",
+        "",
+        "",
+        "",
+        "${tempVars.poll_description}\n\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}",
+        "",
+        "",
+        "Asked to ${dbsVars.guild.memberCount} Members",
+        "BOOL_TRUE@@",
+        "poll_3",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Reaction Listener Poll_3",
+      "guid": "7413bb0f-3851-426c-a7a8-67678d594577",
+      "reactionFields": [
+        "1️⃣",
+        "2️⃣",
+        "3️⃣"
+      ],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "1️⃣",
+          "connections": []
+        },
+        {
+          "label": "2️⃣",
+          "connections": []
+        },
+        {
+          "label": "3️⃣",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "137b8875-39c0-4a72-b9cd-ed5317a5db65"
+        }
+      ],
+      "x": 1508,
+      "y": 458,
+      "rtype": "Reaction",
+      "rsubtype": "Add Reaction Listener",
+      "formdata": [
+        "${tempVars.poll_3.id}",
+        "0",
+        "poll_3_emoji",
+        "poll_3_user",
+        "BOOL_TRUE@@"
+      ],
+      "formnames": [
+        "message",
+        "duration",
+        "reactionemoji",
+        "reactionuser",
+        "react"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll_3_2",
+      "guid": "54874679-4cef-47a6-bc18-3f7bb449fb55",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "927f4317-0bdc-4437-aa78-375aa65a7396"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "a58a7eb9-4826-4463-9210-65a5170af68d"
+        }
+      ],
+      "x": 905,
+      "y": 104,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "What a great choice, you can now setup your options!\n\nPlease enter the `first` option.\n1️⃣ = null\n2️⃣ = null\n3️⃣ = null\n4️⃣ = null",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll_3_3",
+      "guid": "9d112d0b-3680-410f-9741-28a2af83c3fb",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "53978451-3cd7-4a17-b647-119eedc9e9c2"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "a58a7eb9-4826-4463-9210-65a5170af68d"
+        }
+      ],
+      "x": 1104,
+      "y": 104,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "What a great choice, you can now setup your options!\n\nPlease enter the `first` option.\n1️⃣ = null\n2️⃣ = null\n3️⃣ = null\n4️⃣ = null\n5️⃣ = null",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Await User Message_2_2",
+      "guid": "927f4317-0bdc-4437-aa78-375aa65a7396",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "af359e20-c539-43c7-97f7-2fab4591dd03"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "54874679-4cef-47a6-bc18-3f7bb449fb55"
+        }
+      ],
+      "x": 907,
+      "y": 164,
+      "rtype": "Message",
+      "rsubtype": "Await User Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${dbsVars.CommandAuthor.id}",
+        "0",
+        "Send Embed Poll_4_2",
+        "",
+        "content",
+        "poll_option_1",
+        "temp"
+      ],
+      "formnames": [
+        "channelid",
+        "userid",
+        "time",
+        "true",
+        "false",
+        "dropdown",
+        "variablename",
+        "variabletype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Await User Message_2_3",
+      "guid": "53978451-3cd7-4a17-b647-119eedc9e9c2",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "e27647e0-7378-4503-87de-25f9e1efb67a"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "9d112d0b-3680-410f-9741-28a2af83c3fb"
+        }
+      ],
+      "x": 1105,
+      "y": 163,
+      "rtype": "Message",
+      "rsubtype": "Await User Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${dbsVars.CommandAuthor.id}",
+        "0",
+        "Send Embed Poll_4_3",
+        "",
+        "content",
+        "poll_option_1",
+        "temp"
+      ],
+      "formnames": [
+        "channelid",
+        "userid",
+        "time",
+        "true",
+        "false",
+        "dropdown",
+        "variablename",
+        "variabletype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll_4_2",
+      "guid": "af359e20-c539-43c7-97f7-2fab4591dd03",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "dfc68ccd-8cc7-46be-a570-08e5d4ce4ec5"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "927f4317-0bdc-4437-aa78-375aa65a7396"
+        }
+      ],
+      "x": 907,
+      "y": 224,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "Please enter the `seccond` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = null\n3️⃣ = null\n4️⃣ = null",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll_4_3",
+      "guid": "e27647e0-7378-4503-87de-25f9e1efb67a",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "0ea9981b-e8e4-46a3-aa23-a2cb9f49bbbd"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "53978451-3cd7-4a17-b647-119eedc9e9c2"
+        }
+      ],
+      "x": 1106,
+      "y": 222,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "Please enter the `seccond` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = null\n3️⃣ = null\n4️⃣ = null\n5️⃣ = null",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Await User Message_3_2",
+      "guid": "dfc68ccd-8cc7-46be-a570-08e5d4ce4ec5",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "28ff02cb-653a-4984-8e64-342650624cfa"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "af359e20-c539-43c7-97f7-2fab4591dd03"
+        }
+      ],
+      "x": 909,
+      "y": 284,
+      "rtype": "Message",
+      "rsubtype": "Await User Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${dbsVars.CommandAuthor.id}",
+        "0",
+        "Send Embed Poll_5_2",
+        "",
+        "content",
+        "poll_option_2",
+        "temp"
+      ],
+      "formnames": [
+        "channelid",
+        "userid",
+        "time",
+        "true",
+        "false",
+        "dropdown",
+        "variablename",
+        "variabletype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Await User Message_3_3",
+      "guid": "0ea9981b-e8e4-46a3-aa23-a2cb9f49bbbd",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "1ecf6adf-f0c4-4953-906b-b509f9c0d2d6"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "e27647e0-7378-4503-87de-25f9e1efb67a"
+        }
+      ],
+      "x": 1108,
+      "y": 280,
+      "rtype": "Message",
+      "rsubtype": "Await User Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${dbsVars.CommandAuthor.id}",
+        "0",
+        "Send Embed Poll_5_3",
+        "",
+        "content",
+        "poll_option_2",
+        "temp"
+      ],
+      "formnames": [
+        "channelid",
+        "userid",
+        "time",
+        "true",
+        "false",
+        "dropdown",
+        "variablename",
+        "variabletype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll_5_2",
+      "guid": "28ff02cb-653a-4984-8e64-342650624cfa",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "7fc52edf-fa7a-40dd-8170-6bf2d1c19fe6"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "dfc68ccd-8cc7-46be-a570-08e5d4ce4ec5"
+        }
+      ],
+      "x": 910,
+      "y": 343,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "Please enter the `third` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = null\n4️⃣ = null",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll_5_3",
+      "guid": "1ecf6adf-f0c4-4953-906b-b509f9c0d2d6",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "72670945-ca34-4a38-beb8-0dd4259cd4a0"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "0ea9981b-e8e4-46a3-aa23-a2cb9f49bbbd"
+        }
+      ],
+      "x": 1111,
+      "y": 338,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "Please enter the `third` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = null\n4️⃣ = null\n5️⃣ = null",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Await User Message_4_1",
+      "guid": "7fc52edf-fa7a-40dd-8170-6bf2d1c19fe6",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "d432cb00-51b6-4104-a786-5264c864a2fd"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "28ff02cb-653a-4984-8e64-342650624cfa"
+        }
+      ],
+      "x": 913,
+      "y": 402,
+      "rtype": "Message",
+      "rsubtype": "Await User Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${dbsVars.CommandAuthor.id}",
+        "0",
+        "Send Embed Poll_6_1",
+        "",
+        "content",
+        "poll_option_3",
+        "temp"
+      ],
+      "formnames": [
+        "channelid",
+        "userid",
+        "time",
+        "true",
+        "false",
+        "dropdown",
+        "variablename",
+        "variabletype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Await User Message_4_2",
+      "guid": "72670945-ca34-4a38-beb8-0dd4259cd4a0",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "0c0c5a64-694a-4dac-9148-ac1375e7e2a2"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "1ecf6adf-f0c4-4953-906b-b509f9c0d2d6"
+        }
+      ],
+      "x": 1112,
+      "y": 395,
+      "rtype": "Message",
+      "rsubtype": "Await User Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${dbsVars.CommandAuthor.id}",
+        "0",
+        "Send Embed Poll_6_2",
+        "",
+        "content",
+        "poll_option_3",
+        "temp"
+      ],
+      "formnames": [
+        "channelid",
+        "userid",
+        "time",
+        "true",
+        "false",
+        "dropdown",
+        "variablename",
+        "variabletype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll_6_1",
+      "guid": "d432cb00-51b6-4104-a786-5264c864a2fd",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "a5a36348-7889-4d12-bfad-bdc08d084d8e"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7fc52edf-fa7a-40dd-8170-6bf2d1c19fe6"
+        }
+      ],
+      "x": 914,
+      "y": 462,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "Please enter the `fourth` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = null",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll_6_2",
+      "guid": "0c0c5a64-694a-4dac-9148-ac1375e7e2a2",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "41cbcc6f-13f5-4c8f-9d71-cc980f12fd3a"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "72670945-ca34-4a38-beb8-0dd4259cd4a0"
+        }
+      ],
+      "x": 1115,
+      "y": 454,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "Please enter the `fourth` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = null\n5️⃣ = null",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Await User Message_5",
+      "guid": "a5a36348-7889-4d12-bfad-bdc08d084d8e",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "f0e8e857-bdea-416b-b753-6524ef0ee660"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "d432cb00-51b6-4104-a786-5264c864a2fd"
+        }
+      ],
+      "x": 914,
+      "y": 519,
+      "rtype": "Message",
+      "rsubtype": "Await User Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${dbsVars.CommandAuthor.id}",
+        "0",
+        "Send Embed Poll_7",
+        "",
+        "content",
+        "poll_option_4",
+        "temp"
+      ],
+      "formnames": [
+        "channelid",
+        "userid",
+        "time",
+        "true",
+        "false",
+        "dropdown",
+        "variablename",
+        "variabletype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Await User Message_5_1",
+      "guid": "41cbcc6f-13f5-4c8f-9d71-cc980f12fd3a",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "80cdbf80-36fc-41cc-9a12-c0910556de6d"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "0c0c5a64-694a-4dac-9148-ac1375e7e2a2"
+        }
+      ],
+      "x": 1116,
+      "y": 513,
+      "rtype": "Message",
+      "rsubtype": "Await User Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${dbsVars.CommandAuthor.id}",
+        "0",
+        "Send Embed Poll_7_1",
+        "",
+        "content",
+        "poll_option_4",
+        "temp"
+      ],
+      "formnames": [
+        "channelid",
+        "userid",
+        "time",
+        "true",
+        "false",
+        "dropdown",
+        "variablename",
+        "variabletype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll_7",
+      "guid": "f0e8e857-bdea-416b-b753-6524ef0ee660",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "3209fba0-c22f-40fa-87d4-3602d20db82c"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "a5a36348-7889-4d12-bfad-bdc08d084d8e"
+        }
+      ],
+      "x": 916,
+      "y": 578,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = ${tempVars.poll_option_4}",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Poll_4",
+      "guid": "dbc7d7e3-355c-47b9-95dd-2a86505a9bff",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "poll_4",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "86f5c969-8ecd-4928-b648-9faa1a3e6f98",
+            "b207b786-0953-4cf8-bc79-d0e6f404b73b",
+            "af69425c-92b8-4804-a24e-eba08c261ff6"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ac07a7cc-2b7d-4595-8345-4d05c3f62731"
+        }
+      ],
+      "x": 1703,
+      "y": 204,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 | **${tempVars.poll_title}**",
+        "",
+        "",
+        "",
+        "",
+        "${tempVars.poll_description}\n\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = ${tempVars.poll_option_4}",
+        "",
+        "",
+        "Asked to ${dbsVars.guild.memberCount} Members",
+        "BOOL_TRUE@@",
+        "poll_4",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Reaction Listener Poll_4",
+      "guid": "86f5c969-8ecd-4928-b648-9faa1a3e6f98",
+      "reactionFields": [
+        "1️⃣",
+        "2️⃣",
+        "3️⃣",
+        "4️⃣"
+      ],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "1️⃣",
+          "connections": []
+        },
+        {
+          "label": "2️⃣",
+          "connections": []
+        },
+        {
+          "label": "3️⃣",
+          "connections": []
+        },
+        {
+          "label": "4️⃣",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "dbc7d7e3-355c-47b9-95dd-2a86505a9bff"
+        }
+      ],
+      "x": 1704,
+      "y": 240,
+      "rtype": "Reaction",
+      "rsubtype": "Add Reaction Listener",
+      "formdata": [
+        "${tempVars.poll_4.id}",
+        "0",
+        "poll_4_emoji",
+        "poll_4_user",
+        "BOOL_TRUE@@"
+      ],
+      "formnames": [
+        "message",
+        "duration",
+        "reactionemoji",
+        "reactionuser",
+        "react"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Poll_5",
+      "guid": "2c578559-04f9-4bde-a68d-aa350a5106cf",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "poll_5",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "c2ed882a-e2ca-46b3-ab04-307b2d068f69",
+            "b207b786-0953-4cf8-bc79-d0e6f404b73b",
+            "af69425c-92b8-4804-a24e-eba08c261ff6"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "6f1aed5c-fee2-4479-a001-e27579c5a7fb"
+        }
+      ],
+      "x": 1704,
+      "y": 475,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 | **${tempVars.poll_title}**",
+        "",
+        "",
+        "",
+        "",
+        "${tempVars.poll_description}\n\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = ${tempVars.poll_option_4}\n5️⃣ = ${tempVars.poll_option_5}",
+        "",
+        "",
+        "Asked to ${dbsVars.guild.memberCount} Members",
+        "BOOL_TRUE@@",
+        "poll_5",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Poll_1_1",
+      "guid": "3209fba0-c22f-40fa-87d4-3602d20db82c",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "a961c667-566d-46d1-aa60-b0b9ea473d32"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "f0e8e857-bdea-416b-b753-6524ef0ee660"
+        }
+      ],
+      "x": 916,
+      "y": 638,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 | **${tempVars.poll_title}**",
+        "",
+        "",
+        "",
+        "",
+        "${tempVars.poll_description}\n\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = ${tempVars.poll_option_4}\n\nThis will be your poll please type `!poll-generate` in the channel you want the poll to be in!",
+        "",
+        "",
+        "Asked to ${dbsVars.guild.memberCount} Members",
+        "BOOL_TRUE@@",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "GRN_3",
+      "guid": "a961c667-566d-46d1-aa60-b0b9ea473d32",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "3209fba0-c22f-40fa-87d4-3602d20db82c"
+        }
+      ],
+      "x": 920,
+      "y": 673,
+      "rtype": "Variable",
+      "rsubtype": "Generate Random Number",
+      "formdata": [
+        "poll_option_count",
+        "4",
+        "4",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "min",
+        "max",
+        "saveVarType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll_7_1",
+      "guid": "80cdbf80-36fc-41cc-9a12-c0910556de6d",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "6380c4e5-6368-40f1-93e2-e77c849c65b5"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "41cbcc6f-13f5-4c8f-9d71-cc980f12fd3a"
+        }
+      ],
+      "x": 1118,
+      "y": 572,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "Please enter the `fifth` option\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = ${tempVars.poll_option_4}\n5️⃣ = null",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Reaction Listener Poll_5",
+      "guid": "c2ed882a-e2ca-46b3-ab04-307b2d068f69",
+      "reactionFields": [
+        "1️⃣",
+        "2️⃣",
+        "3️⃣",
+        "4️⃣",
+        "5️⃣"
+      ],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "1️⃣",
+          "connections": []
+        },
+        {
+          "label": "2️⃣",
+          "connections": []
+        },
+        {
+          "label": "3️⃣",
+          "connections": []
+        },
+        {
+          "label": "4️⃣",
+          "connections": []
+        },
+        {
+          "label": "5️⃣",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "2c578559-04f9-4bde-a68d-aa350a5106cf"
+        }
+      ],
+      "x": 1704,
+      "y": 512,
+      "rtype": "Reaction",
+      "rsubtype": "Add Reaction Listener",
+      "formdata": [
+        "${tempVars.poll_5.id}",
+        "0",
+        "poll_5_emoji",
+        "poll_5_user",
+        "BOOL_TRUE@@"
+      ],
+      "formnames": [
+        "message",
+        "duration",
+        "reactionemoji",
+        "reactionuser",
+        "react"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Await User Message_6",
+      "guid": "6380c4e5-6368-40f1-93e2-e77c849c65b5",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "10580573-fa7b-4f29-92ac-606650652a11"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "80cdbf80-36fc-41cc-9a12-c0910556de6d"
+        }
+      ],
+      "x": 1118,
+      "y": 630,
+      "rtype": "Message",
+      "rsubtype": "Await User Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${dbsVars.CommandAuthor.id}",
+        "0",
+        "Send Embed Poll_8",
+        "",
+        "content",
+        "poll_option_5",
+        "temp"
+      ],
+      "formnames": [
+        "channelid",
+        "userid",
+        "time",
+        "true",
+        "false",
+        "dropdown",
+        "variablename",
+        "variabletype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll_8",
+      "guid": "10580573-fa7b-4f29-92ac-606650652a11",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "31b5a927-8988-47b7-ae58-8c5c4a69e753"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "6380c4e5-6368-40f1-93e2-e77c849c65b5"
+        }
+      ],
+      "x": 1121,
+      "y": 688,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = ${tempVars.poll_option_4}\n5️⃣ = ${tempVars.poll_option_5}",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Poll_1_2",
+      "guid": "31b5a927-8988-47b7-ae58-8c5c4a69e753",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "b836a0e0-a589-4d9c-b827-12ee93cb49ab"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "10580573-fa7b-4f29-92ac-606650652a11"
+        }
+      ],
+      "x": 1121,
+      "y": 746,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 | **${tempVars.poll_title}**",
+        "",
+        "",
+        "",
+        "",
+        "${tempVars.poll_description}\n\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = ${tempVars.poll_option_4}\n5️⃣ = ${tempVars.poll_option_5}\n\nThis will be your poll please type `!poll-generate` in the channel you want the poll to be in!",
+        "",
+        "",
+        "Asked to ${dbsVars.guild.memberCount} Members",
+        "BOOL_TRUE@@",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "GRN_4",
+      "guid": "b836a0e0-a589-4d9c-b827-12ee93cb49ab",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "31b5a927-8988-47b7-ae58-8c5c4a69e753"
+        }
+      ],
+      "x": 1123,
+      "y": 782,
+      "rtype": "Variable",
+      "rsubtype": "Generate Random Number",
+      "formdata": [
+        "poll_option_count",
+        "5",
+        "5",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "min",
+        "max",
+        "saveVarType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll_5",
+      "guid": "2dc48e5a-8ea6-41e1-a245-c5216802f4a3",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "8971bad6-fb84-462e-ba5a-25fd539906ee"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "991ab416-0cad-4687-9bb7-e9796830c0d2"
+        }
+      ],
+      "x": 508,
+      "y": 343,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 Poll Setup | ${dbsVars.guild.name}",
+        "",
+        "",
+        "",
+        "",
+        "\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}",
+        "",
+        "",
+        "©2022 - Jeroentje#4361",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Poll",
+      "guid": "8971bad6-fb84-462e-ba5a-25fd539906ee",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "08d810be-72a7-4000-ac29-c8754ef3136c"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "2dc48e5a-8ea6-41e1-a245-c5216802f4a3"
+        }
+      ],
+      "x": 508,
+      "y": 405,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0FC0EA",
+        "📊 | ${tempVars.poll_title}",
+        "",
+        "",
+        "",
+        "",
+        "${tempVars.poll_description}\n\n1️⃣ = `${tempVars.poll_option_1}`\n2️⃣ = `${tempVars.poll_option_2}`\n\nThis will be your poll please type `!poll-generate` in the channel you want the poll to be in!",
+        "",
+        "",
+        "Asked to ${dbsVars.guild.memberCount} Members",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "GRN_1",
+      "guid": "08d810be-72a7-4000-ac29-c8754ef3136c",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "8971bad6-fb84-462e-ba5a-25fd539906ee"
+        }
+      ],
+      "x": 507,
+      "y": 441,
+      "rtype": "Variable",
+      "rsubtype": "Generate Random Number",
+      "formdata": [
+        "poll_option_count",
+        "2",
+        "2",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "min",
+        "max",
+        "saveVarType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "clear",
+      "guid": "dbc17dd7-25e7-4f22-9752-04b764835b97",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "8f153654-2a2a-410a-9024-3be2b978a0ce"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 3803,
+      "y": 105
+    },
+    {
+      "type": "response",
+      "name": "Help General",
+      "guid": "184617b9-d46a-48d0-87ec-96a8670adcc2",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "❓ | Help",
+          "value": "Shows this menu\n**Usage:** `!help`",
+          "inline": "false"
+        },
+        {
+          "name": "🔗 | Invite",
+          "value": "Sends a invite link\n**Usage:** `!invite`",
+          "inline": "false"
+        },
+        {
+          "name": "🙊 | Say",
+          "value": "Make the bot send a Embed or Normal message\n**Usage:** `!say <embed/normal> <message>`\n**Required permissions:** `View Audit Log`",
+          "inline": "true"
+        }
+      ],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "08abb894-8982-4af1-ac62-b3fffb2bc95d"
+        }
+      ],
+      "x": 3403,
+      "y": 382,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "520F94",
+        "👑 | Help General",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "help-general",
+      "guid": "e1cc83a2-f8ae-45a9-9bba-146bfb95c355",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "08abb894-8982-4af1-ac62-b3fffb2bc95d"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 3404,
+      "y": 104
+    },
+    {
+      "type": "response",
+      "name": "Check User Permissions_5",
+      "guid": "08abb894-8982-4af1-ac62-b3fffb2bc95d",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "184617b9-d46a-48d0-87ec-96a8670adcc2"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "e1cc83a2-f8ae-45a9-9bba-146bfb95c355"
+        }
+      ],
+      "x": 3402,
+      "y": 204,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "VIEW_AUDIT_LOG"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Help",
+      "guid": "b9a3ac55-a6f3-4523-b89a-2109581dd893",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "🌍 | General",
+          "value": "See all general commands.\n**!help-general**",
+          "inline": "false"
+        },
+        {
+          "name": "🎪 | Events",
+          "value": "See all events commands.\n**!help-events**",
+          "inline": "false"
+        },
+        {
+          "name": "👮‍♂️ | Moderation",
+          "value": "See all moderation commands.\n**!help-moderation**",
+          "inline": "false"
+        },
+        {
+          "name": "📊 | Customization",
+          "value": "See all customization commands.\n**!help-customization**",
+          "inline": "true"
+        }
+      ],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "70f5cc60-c5de-4884-a459-fb485b5742b4"
+        }
+      ],
+      "x": 3203,
+      "y": 383,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "520F94",
+        "👑 | Events Help",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "help-customization",
+      "guid": "260cde87-a5f9-4c5b-b8a4-22e517730bd3",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "70975423-bfe6-4725-ae95-b64d0b425570"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 3605,
+      "y": 102
+    },
+    {
+      "type": "command",
+      "name": "help-events",
+      "guid": "f38d651d-db53-4396-9bad-53a21225c6f2",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "fa7878ad-5c16-4d14-bce8-f3d5e218cf52"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 3203,
+      "y": 502
+    },
+    {
+      "type": "response",
+      "name": "Check User Permissions_6",
+      "guid": "70975423-bfe6-4725-ae95-b64d0b425570",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "e5bf2440-4487-4778-997e-045687cbb132"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "260cde87-a5f9-4c5b-b8a4-22e517730bd3"
+        }
+      ],
+      "x": 3603,
+      "y": 208,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "VIEW_AUDIT_LOG"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check User Permissions_7",
+      "guid": "fa7878ad-5c16-4d14-bce8-f3d5e218cf52",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "9ba06037-8e58-44b0-a4f8-5114a9aca898"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "f38d651d-db53-4396-9bad-53a21225c6f2"
+        }
+      ],
+      "x": 3204,
+      "y": 584,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "VIEW_AUDIT_LOG"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ],
+      "messageActionRows": []
+    },
+    {
+      "type": "response",
+      "name": "Check User Permissions_8",
+      "guid": "224dfbf2-aef8-4705-8a09-9997c2f24c33",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "b0627f90-1a3d-4a59-8083-d5fa404a18f3"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "02d1feca-a95c-4858-a06d-7ef6df5478ba"
+        }
+      ],
+      "x": 3405,
+      "y": 622,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "VIEW_AUDIT_LOG"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Help Customization",
+      "guid": "e5bf2440-4487-4778-997e-045687cbb132",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "⚙️ | Settings",
+          "value": "See your bot settings.\n**Usage:** `!settings`\n**Required permissions:** `Administrator`",
+          "inline": "false"
+        },
+        {
+          "name": "📂 | Setlogs",
+          "value": "Set your log channel.\n**Usage:** `!setlogs <channel>`\n**Required permissions:** `Administrator`",
+          "inline": "false"
+        }
+      ],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "70975423-bfe6-4725-ae95-b64d0b425570"
+        }
+      ],
+      "x": 3602,
+      "y": 383,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "520F94",
+        "📊 | Help Customization",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check User Permissions_9",
+      "guid": "8f153654-2a2a-410a-9024-3be2b978a0ce",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "1e47fef7-a68c-4124-9c9f-6e1e7408f9d3"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "dbc17dd7-25e7-4f22-9752-04b764835b97"
+        }
+      ],
+      "x": 3805,
+      "y": 202,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "MANAGE_MESSAGES"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Help Events",
+      "guid": "9ba06037-8e58-44b0-a4f8-5114a9aca898",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "📊 | Poll",
+          "value": "Create a poll that can have up to 5 options.\n**Usage:** `!poll`\n**Required permissions:** `Administrator`",
+          "inline": "false"
+        },
+        {
+          "name": "🔧 | Changelogs",
+          "value": "Sends a embed message to the channel the command was send in.\n**Usage:** `!changelog <version> <description>`\n**Required permissions:** `Mannage Channels, Mention Everyone`",
+          "inline": "true"
+        }
+      ],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "fa7878ad-5c16-4d14-bce8-f3d5e218cf52"
+        }
+      ],
+      "x": 3205,
+      "y": 756,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "520F94",
+        "👑 | Help Events",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Get Number of Messages",
+      "guid": "1e47fef7-a68c-4124-9c9f-6e1e7408f9d3",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "clear_message_count",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "37d0c5ad-c2d6-4dd0-ad53-58222bdc188c"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "8f153654-2a2a-410a-9024-3be2b978a0ce"
+        }
+      ],
+      "x": 3803,
+      "y": 385,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "clear_message_count",
+        "Number",
+        "temp",
+        "1"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Delete All Clear Messages",
+      "guid": "37d0c5ad-c2d6-4dd0-ad53-58222bdc188c",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "1e47fef7-a68c-4124-9c9f-6e1e7408f9d3"
+        }
+      ],
+      "x": 3806,
+      "y": 446,
+      "rtype": "Channel Action",
+      "rsubtype": "Delete All Messages",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${tempVars.clear_message_count}"
+      ],
+      "formnames": [
+        "channelname",
+        "msgcount"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check If Variable Exists",
+      "guid": "4c382e1f-c66b-45a9-926e-d2940171e389",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "5dd9492c-8442-4fa6-9418-ddfccc775f1e"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "61b43336-87fb-48fb-85d5-645fdd941361"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "490d5ac3-513b-414d-8ad5-1e84bcaa8118"
+        }
+      ],
+      "x": 2502,
+      "y": 403,
+      "rtype": "Variable",
+      "rsubtype": "Check If Variable Exists",
+      "formdata": [
+        "say_message",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "saveVarType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check If Variable Exists_1",
+      "guid": "146a2f39-29c7-405d-959b-910de4028416",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "7b1e4f26-52cb-4abb-9496-86005bfe39f7"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "61b43336-87fb-48fb-85d5-645fdd941361"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "73cba671-f3b2-44f9-bf02-b00c606440ef"
+        }
+      ],
+      "x": 2500,
+      "y": 462,
+      "rtype": "Variable",
+      "rsubtype": "Check If Variable Exists",
+      "formdata": [
+        "say_message",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "saveVarType"
+      ],
+      "messageActionRows": []
+    },
+    {
+      "type": "response",
+      "name": "Poll Reaction Listener",
+      "guid": "a58a7eb9-4826-4463-9210-65a5170af68d",
+      "reactionFields": [
+        "2️⃣",
+        "3️⃣",
+        "4️⃣",
+        "5️⃣"
+      ],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "2️⃣",
+          "connections": [
+            "02b36c76-90df-491f-a332-66a9fb1c2e96"
+          ]
+        },
+        {
+          "label": "3️⃣",
+          "connections": [
+            "4b38182c-2955-47d8-963d-cd933d560964"
+          ]
+        },
+        {
+          "label": "4️⃣",
+          "connections": [
+            "54874679-4cef-47a6-bc18-3f7bb449fb55"
+          ]
+        },
+        {
+          "label": "5️⃣",
+          "connections": [
+            "9d112d0b-3680-410f-9741-28a2af83c3fb"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "c4f89442-86b6-4565-982e-b4e55671d170"
+        }
+      ],
+      "x": 302,
+      "y": 308,
+      "rtype": "Reaction",
+      "rsubtype": "Add Reaction Listener",
+      "formdata": [
+        "${tempVars.poll_ask_option_count_message.id}",
+        "0",
+        "option_count_emoji",
+        "option_count_user",
+        "BOOL_TRUE@@"
+      ],
+      "formnames": [
+        "message",
+        "duration",
+        "reactionemoji",
+        "reactionuser",
+        "react"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Multiple Input_5",
+      "guid": "b207b786-0953-4cf8-bc79-d0e6f404b73b",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "c18ecc3b-fa37-4d9d-8475-adf005c81b62"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "9cc1d924-7b11-4b77-b5fe-12c4510c9b64"
+        },
+        {
+          "label": "trigger",
+          "id": "137b8875-39c0-4a72-b9cd-ed5317a5db65"
+        },
+        {
+          "label": "trigger",
+          "id": "dbc7d7e3-355c-47b9-95dd-2a86505a9bff"
+        },
+        {
+          "label": "trigger",
+          "id": "2c578559-04f9-4bde-a68d-aa350a5106cf"
+        }
+      ],
+      "x": 1902,
+      "y": 203,
+      "rtype": "Control",
+      "rsubtype": "Multiple Input",
+      "messageActionRows": []
+    },
+    {
+      "type": "response",
+      "name": "GRN_5",
+      "guid": "c18ecc3b-fa37-4d9d-8475-adf005c81b62",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "b207b786-0953-4cf8-bc79-d0e6f404b73b"
+        }
+      ],
+      "x": 1904,
+      "y": 482,
+      "rtype": "Variable",
+      "rsubtype": "Generate Random Number",
+      "formdata": [
+        "poll_option_count",
+        "0",
+        "0",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "min",
+        "max",
+        "saveVarType"
+      ],
+      "messageActionRows": []
+    },
+    {
+      "type": "response",
+      "name": "Check User Permissions_10",
+      "guid": "16674073-4006-4ece-8cb0-064b67ed01aa",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "548a249d-dffb-49ce-af2d-a244f7880534"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "712a9c9a-c235-4755-a3db-6e01d65b6d0a"
+        }
+      ],
+      "x": 2102,
+      "y": 1003,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "ADMINISTRATOR"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "settings",
+      "guid": "6156e1a3-0835-4a0f-a98f-6dc378668f15",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "45068a9f-03cc-48b7-9a00-220b79cb787b"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 2304,
+      "y": 904
+    },
+    {
+      "type": "response",
+      "name": "Check User Permissions_11",
+      "guid": "45068a9f-03cc-48b7-9a00-220b79cb787b",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "ded98385-df7b-4019-a39f-e4fe654faeb9"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "6156e1a3-0835-4a0f-a98f-6dc378668f15"
+        }
+      ],
+      "x": 2304,
+      "y": 1002,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "ADMINISTRATOR"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Settings",
+      "guid": "ded98385-df7b-4019-a39f-e4fe654faeb9",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "45068a9f-03cc-48b7-9a00-220b79cb787b"
+        }
+      ],
+      "x": 2303,
+      "y": 1183,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "520F94",
+        "⚙️ | Settings",
+        "",
+        "",
+        "",
+        "",
+        "Prefix: **!**\nLog Channel: <#${serverVars.log_channel}>",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "setlogs",
+      "guid": "712a9c9a-c235-4755-a3db-6e01d65b6d0a",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "16674073-4006-4ece-8cb0-064b67ed01aa"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 2104,
+      "y": 904
+    },
+    {
+      "type": "response",
+      "name": "Get Log Channel",
+      "guid": "548a249d-dffb-49ce-af2d-a244f7880534",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "2c27c660-c774-44de-b1e3-0425b3f7bd7f"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "16674073-4006-4ece-8cb0-064b67ed01aa"
+        }
+      ],
+      "x": 2104,
+      "y": 1186,
+      "rtype": "Variable",
+      "rsubtype": "Get Mentioned Channel",
+      "formdata": [
+        "log_channel",
+        "server"
+      ],
+      "formnames": [
+        "varName",
+        "varType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Get Log Channel Message",
+      "guid": "2c27c660-c774-44de-b1e3-0425b3f7bd7f",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "548a249d-dffb-49ce-af2d-a244f7880534"
+        }
+      ],
+      "x": 2104,
+      "y": 1245,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${serverVars.log_channel}",
+        "<@${dbsVars.CommandAuthor.id}> has set the log channel to <#${serverVars.log_channel}>",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Embed Poll Logs",
+      "guid": "27fba391-b14c-49c1-911e-6cb91f96d800",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "Created by:",
+          "value": "<@${dbsVars.CommandAuthor.id}>\n`(${dbsVars.CommandAuthor.id})`",
+          "inline": "true"
+        },
+        {
+          "name": "Poll:",
+          "value": "${tempVars.poll_2.url}",
+          "inline": "true"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "af69425c-92b8-4804-a24e-eba08c261ff6"
+        }
+      ],
+      "x": 2105,
+      "y": 746,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${serverVars.log_channel}",
+        "520F94",
+        "📊 | Poll Log",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "help-moderation",
+      "guid": "02d1feca-a95c-4858-a06d-7ef6df5478ba",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "224dfbf2-aef8-4705-8a09-9997c2f24c33"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 3406,
+      "y": 504
+    },
+    {
+      "type": "response",
+      "name": "Help Moderation",
+      "guid": "b0627f90-1a3d-4a59-8083-d5fa404a18f3",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "❌ | Clear",
+          "value": "Remove a number of messages\n**Usage:** `!clear <number of messages>`\n**Required permissions:** `Manage Messages`\n",
+          "inline": "false"
+        }
+      ],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "224dfbf2-aef8-4705-8a09-9997c2f24c33"
+        }
+      ],
+      "x": 3404,
+      "y": 803,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "520F94",
+        "👮‍♂️ | Help Moderation",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Multiple Input_6",
+      "guid": "af69425c-92b8-4804-a24e-eba08c261ff6",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "27fba391-b14c-49c1-911e-6cb91f96d800"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "9cc1d924-7b11-4b77-b5fe-12c4510c9b64"
+        },
+        {
+          "label": "trigger",
+          "id": "137b8875-39c0-4a72-b9cd-ed5317a5db65"
+        },
+        {
+          "label": "trigger",
+          "id": "dbc7d7e3-355c-47b9-95dd-2a86505a9bff"
+        },
+        {
+          "label": "trigger",
+          "id": "2c578559-04f9-4bde-a68d-aa350a5106cf"
+        }
+      ],
+      "x": 1906,
+      "y": 603,
+      "rtype": "Control",
+      "rsubtype": "Multiple Input",
+      "messageActionRows": []
+    }
+  ]
+}

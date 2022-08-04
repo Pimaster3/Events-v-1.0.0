@@ -1,0 +1,2705 @@
+{
+  "command": [
+    {
+      "name": "poll",
+      "perms": [],
+      "actions": [
+        {
+          "name": "Check User Permissions_3",
+          "category": "User Action",
+          "type": "Check User Permissions",
+          "trueActions": [
+            {
+              "name": "Send Embed Poll",
+              "category": "Message",
+              "type": "Send Embed",
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "color": "0FC0EA",
+              "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+              "url": "",
+              "authorname": "",
+              "authorimageurl": "",
+              "authorlink": "",
+              "description": "Let's set up your **poll**! first of all what should the **title** be?",
+              "thumbnail": "",
+              "image": "",
+              "footer": "©2022 - Jeroentje#4361",
+              "timestamp": "false",
+              "savetovariable": "poll_ask_title_message",
+              "savetovariabletype": "temp"
+            },
+            {
+              "name": "Await User Message",
+              "category": "Message",
+              "type": "Await User Message",
+              "messageActionRows": [],
+              "channelid": "${dbsVars.CommandChannel.id}",
+              "userid": "${dbsVars.CommandAuthor.id}",
+              "time": "0",
+              "true": "Send Embed Poll_1",
+              "false": "",
+              "dropdown": "content",
+              "variablename": "poll_title",
+              "variabletype": "temp"
+            },
+            {
+              "name": "Send Embed Poll_1",
+              "category": "Message",
+              "type": "Send Embed",
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "color": "0FC0EA",
+              "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+              "url": "",
+              "authorname": "",
+              "authorimageurl": "",
+              "authorlink": "",
+              "description": "Great, the poll will be named \n\"**${tempVars.poll_title}**\".\nWhat do you want the description to be?",
+              "thumbnail": "",
+              "image": "",
+              "footer": "©2022 - Jeroentje#4361",
+              "timestamp": "false",
+              "savetovariable": "poll_ask_description_message",
+              "savetovariabletype": "temp"
+            },
+            {
+              "name": "Await User Message_1",
+              "category": "Message",
+              "type": "Await User Message",
+              "messageActionRows": [],
+              "channelid": "${dbsVars.CommandChannel.id}",
+              "userid": "${dbsVars.CommandAuthor.id}",
+              "time": "30",
+              "true": "Send Embed Poll_2",
+              "false": "",
+              "dropdown": "content",
+              "variablename": "poll_description",
+              "variabletype": "temp"
+            },
+            {
+              "name": "Send Embed Poll_2",
+              "category": "Message",
+              "type": "Send Embed",
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "color": "0FC0EA",
+              "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+              "url": "",
+              "authorname": "",
+              "authorimageurl": "",
+              "authorlink": "",
+              "description": "Fantastic, the discription will be \"\n**${tempVars.poll_description}**\".\nHow many `options` do you want?",
+              "thumbnail": "",
+              "image": "",
+              "footer": "©2022 - Jeroentje#4361",
+              "timestamp": "false",
+              "savetovariable": "poll_ask_option_count_message",
+              "savetovariabletype": "temp"
+            },
+            {
+              "name": "Check If Poll Options Count Exists",
+              "category": "Variable",
+              "type": "Check If Variable Exists",
+              "trueActions": [
+                {
+                  "name": "Poll Reaction Listener",
+                  "category": "Reaction",
+                  "type": "Add Reaction Listener",
+                  "reactionActions": {
+                    "2️⃣": [
+                      {
+                        "name": "Send Embed Poll_3",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "What a great choice, you can now setup your options!\n\nPlease enter the `first` option.\n1️⃣ = null\n2️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_2",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_4",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_1",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_4",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "Please enter the `seccond` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_3",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Poll",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_2",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_5",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Send Poll",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 | ${tempVars.poll_title}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "${tempVars.poll_description}\n\n1️⃣ = `${tempVars.poll_option_1}`\n2️⃣ = `${tempVars.poll_option_2}`\n\nThis will be your poll please type `!poll-generate` in the channel you want the poll to be in!",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "Asked to ${dbsVars.guild.memberCount} Members",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "GRN_1",
+                        "category": "Variable",
+                        "type": "Generate Random Number",
+                        "messageActionRows": [],
+                        "varname": "poll_option_count",
+                        "min": "2",
+                        "max": "2",
+                        "savevartype": "temp"
+                      }
+                    ],
+                    "3️⃣": [
+                      {
+                        "name": "Send Embed Poll_3_1",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "What a great choice, you can now setup your options!\n\nPlease enter the `first` option.\n1️⃣ = null\n2️⃣ = null\n3️⃣ = null\n",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_2_1",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_4_1",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_1",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_4_1",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "Please enter the `seccond` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = null\n3️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_3_1",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_5_1",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_2",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_5_1",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "Please enter the `third` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = null\n",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_4",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_6",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_3",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_6",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Send Poll_1",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 | **${tempVars.poll_title}**",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "${tempVars.poll_description}\n\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n\nThis will be your poll please type `!poll-generate` in the channel you want the poll to be in!",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "Asked to ${dbsVars.guild.memberCount} Members",
+                        "timestamp": "BOOL_TRUE@@",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "GRN_2",
+                        "category": "Variable",
+                        "type": "Generate Random Number",
+                        "messageActionRows": [],
+                        "varname": "poll_option_count",
+                        "min": "3",
+                        "max": "3",
+                        "savevartype": "temp"
+                      }
+                    ],
+                    "4️⃣": [
+                      {
+                        "name": "Send Embed Poll_3_2",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "What a great choice, you can now setup your options!\n\nPlease enter the `first` option.\n1️⃣ = null\n2️⃣ = null\n3️⃣ = null\n4️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_2_2",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_4_2",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_1",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_4_2",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "Please enter the `seccond` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = null\n3️⃣ = null\n4️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_3_2",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_5_2",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_2",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_5_2",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "Please enter the `third` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = null\n4️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_4_1",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_6_1",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_3",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_6_1",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "Please enter the `fourth` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_5",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_7",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_4",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_7",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = ${tempVars.poll_option_4}",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Send Poll_1_1",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 | **${tempVars.poll_title}**",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "${tempVars.poll_description}\n\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = ${tempVars.poll_option_4}\n\nThis will be your poll please type `!poll-generate` in the channel you want the poll to be in!",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "Asked to ${dbsVars.guild.memberCount} Members",
+                        "timestamp": "BOOL_TRUE@@",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "GRN_3",
+                        "category": "Variable",
+                        "type": "Generate Random Number",
+                        "messageActionRows": [],
+                        "varname": "poll_option_count",
+                        "min": "4",
+                        "max": "4",
+                        "savevartype": "temp"
+                      }
+                    ],
+                    "5️⃣": [
+                      {
+                        "name": "Send Embed Poll_3_3",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "What a great choice, you can now setup your options!\n\nPlease enter the `first` option.\n1️⃣ = null\n2️⃣ = null\n3️⃣ = null\n4️⃣ = null\n5️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_2_3",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_4_3",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_1",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_4_3",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "Please enter the `seccond` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = null\n3️⃣ = null\n4️⃣ = null\n5️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_3_3",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_5_3",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_2",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_5_3",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "Please enter the `third` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = null\n4️⃣ = null\n5️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_4_2",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_6_2",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_3",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_6_2",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "Please enter the `fourth` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = null\n5️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_5_1",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_7_1",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_4",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_7_1",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "Please enter the `fifth` option\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = ${tempVars.poll_option_4}\n5️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_6",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_8",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_5",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_8",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = ${tempVars.poll_option_4}\n5️⃣ = ${tempVars.poll_option_5}",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Send Poll_1_2",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 | **${tempVars.poll_title}**",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "${tempVars.poll_description}\n\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = ${tempVars.poll_option_4}\n5️⃣ = ${tempVars.poll_option_5}\n\nThis will be your poll please type `!poll-generate` in the channel you want the poll to be in!",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "Asked to ${dbsVars.guild.memberCount} Members",
+                        "timestamp": "BOOL_TRUE@@",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "GRN_4",
+                        "category": "Variable",
+                        "type": "Generate Random Number",
+                        "messageActionRows": [],
+                        "varname": "poll_option_count",
+                        "min": "5",
+                        "max": "5",
+                        "savevartype": "temp"
+                      }
+                    ]
+                  },
+                  "messageActionRows": [],
+                  "message": "${tempVars.poll_ask_option_count_message.id}",
+                  "duration": "0",
+                  "reactionemoji": "option_count_emoji",
+                  "reactionuser": "option_count_user",
+                  "react": "BOOL_TRUE@@"
+                }
+              ],
+              "falseActions": [
+                {
+                  "name": "GRN",
+                  "category": "Variable",
+                  "type": "Generate Random Number",
+                  "messageActionRows": [],
+                  "varname": "poll_option_count",
+                  "min": "0",
+                  "max": "0",
+                  "savevartype": "temp"
+                },
+                {
+                  "name": "Poll Reaction Listener",
+                  "category": "Reaction",
+                  "type": "Add Reaction Listener",
+                  "reactionActions": {
+                    "2️⃣": [
+                      {
+                        "name": "Send Embed Poll_3",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "What a great choice, you can now setup your options!\n\nPlease enter the `first` option.\n1️⃣ = null\n2️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_2",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_4",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_1",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_4",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "Please enter the `seccond` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_3",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Poll",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_2",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_5",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Send Poll",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 | ${tempVars.poll_title}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "${tempVars.poll_description}\n\n1️⃣ = `${tempVars.poll_option_1}`\n2️⃣ = `${tempVars.poll_option_2}`\n\nThis will be your poll please type `!poll-generate` in the channel you want the poll to be in!",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "Asked to ${dbsVars.guild.memberCount} Members",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "GRN_1",
+                        "category": "Variable",
+                        "type": "Generate Random Number",
+                        "messageActionRows": [],
+                        "varname": "poll_option_count",
+                        "min": "2",
+                        "max": "2",
+                        "savevartype": "temp"
+                      }
+                    ],
+                    "3️⃣": [
+                      {
+                        "name": "Send Embed Poll_3_1",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "What a great choice, you can now setup your options!\n\nPlease enter the `first` option.\n1️⃣ = null\n2️⃣ = null\n3️⃣ = null\n",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_2_1",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_4_1",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_1",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_4_1",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "Please enter the `seccond` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = null\n3️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_3_1",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_5_1",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_2",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_5_1",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "Please enter the `third` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = null\n",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_4",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_6",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_3",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_6",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Send Poll_1",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 | **${tempVars.poll_title}**",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "${tempVars.poll_description}\n\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n\nThis will be your poll please type `!poll-generate` in the channel you want the poll to be in!",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "Asked to ${dbsVars.guild.memberCount} Members",
+                        "timestamp": "BOOL_TRUE@@",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "GRN_2",
+                        "category": "Variable",
+                        "type": "Generate Random Number",
+                        "messageActionRows": [],
+                        "varname": "poll_option_count",
+                        "min": "3",
+                        "max": "3",
+                        "savevartype": "temp"
+                      }
+                    ],
+                    "4️⃣": [
+                      {
+                        "name": "Send Embed Poll_3_2",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "What a great choice, you can now setup your options!\n\nPlease enter the `first` option.\n1️⃣ = null\n2️⃣ = null\n3️⃣ = null\n4️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_2_2",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_4_2",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_1",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_4_2",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "Please enter the `seccond` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = null\n3️⃣ = null\n4️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_3_2",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_5_2",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_2",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_5_2",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "Please enter the `third` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = null\n4️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_4_1",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_6_1",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_3",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_6_1",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "Please enter the `fourth` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_5",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_7",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_4",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_7",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = ${tempVars.poll_option_4}",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Send Poll_1_1",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 | **${tempVars.poll_title}**",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "${tempVars.poll_description}\n\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = ${tempVars.poll_option_4}\n\nThis will be your poll please type `!poll-generate` in the channel you want the poll to be in!",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "Asked to ${dbsVars.guild.memberCount} Members",
+                        "timestamp": "BOOL_TRUE@@",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "GRN_3",
+                        "category": "Variable",
+                        "type": "Generate Random Number",
+                        "messageActionRows": [],
+                        "varname": "poll_option_count",
+                        "min": "4",
+                        "max": "4",
+                        "savevartype": "temp"
+                      }
+                    ],
+                    "5️⃣": [
+                      {
+                        "name": "Send Embed Poll_3_3",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "What a great choice, you can now setup your options!\n\nPlease enter the `first` option.\n1️⃣ = null\n2️⃣ = null\n3️⃣ = null\n4️⃣ = null\n5️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_2_3",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_4_3",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_1",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_4_3",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "Please enter the `seccond` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = null\n3️⃣ = null\n4️⃣ = null\n5️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_3_3",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_5_3",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_2",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_5_3",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "Please enter the `third` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = null\n4️⃣ = null\n5️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_4_2",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_6_2",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_3",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_6_2",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "Please enter the `fourth` option.\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = null\n5️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_5_1",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_7_1",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_4",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_7_1",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "Please enter the `fifth` option\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = ${tempVars.poll_option_4}\n5️⃣ = null",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Await User Message_6",
+                        "category": "Message",
+                        "type": "Await User Message",
+                        "messageActionRows": [],
+                        "channelid": "${dbsVars.CommandChannel.id}",
+                        "userid": "${dbsVars.CommandAuthor.id}",
+                        "time": "0",
+                        "true": "Send Embed Poll_8",
+                        "false": "",
+                        "dropdown": "content",
+                        "variablename": "poll_option_5",
+                        "variabletype": "temp"
+                      },
+                      {
+                        "name": "Send Embed Poll_8",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 Poll Setup | ${dbsVars.guild.name}",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = ${tempVars.poll_option_4}\n5️⃣ = ${tempVars.poll_option_5}",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "©2022 - Jeroentje#4361",
+                        "timestamp": "false",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "Send Poll_1_2",
+                        "category": "Message",
+                        "type": "Send Embed",
+                        "messageActionRows": [],
+                        "channelname": "${dbsVars.CommandChannel.id}",
+                        "color": "0FC0EA",
+                        "title": "📊 | **${tempVars.poll_title}**",
+                        "url": "",
+                        "authorname": "",
+                        "authorimageurl": "",
+                        "authorlink": "",
+                        "description": "${tempVars.poll_description}\n\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = ${tempVars.poll_option_4}\n5️⃣ = ${tempVars.poll_option_5}\n\nThis will be your poll please type `!poll-generate` in the channel you want the poll to be in!",
+                        "thumbnail": "",
+                        "image": "",
+                        "footer": "Asked to ${dbsVars.guild.memberCount} Members",
+                        "timestamp": "BOOL_TRUE@@",
+                        "savetovariable": "",
+                        "savetovariabletype": "temp"
+                      },
+                      {
+                        "name": "GRN_4",
+                        "category": "Variable",
+                        "type": "Generate Random Number",
+                        "messageActionRows": [],
+                        "varname": "poll_option_count",
+                        "min": "5",
+                        "max": "5",
+                        "savevartype": "temp"
+                      }
+                    ]
+                  },
+                  "messageActionRows": [],
+                  "message": "${tempVars.poll_ask_option_count_message.id}",
+                  "duration": "0",
+                  "reactionemoji": "option_count_emoji",
+                  "reactionuser": "option_count_user",
+                  "react": "BOOL_TRUE@@"
+                }
+              ],
+              "messageActionRows": [],
+              "varname": "poll_option_count",
+              "savevartype": "temp"
+            }
+          ],
+          "falseActions": [],
+          "messageActionRows": [],
+          "user": "${dbsVars.CommandAuthor.id}",
+          "permissions": [
+            "MANAGE_CHANNELS",
+            "MENTION_EVERYONE"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "changelog",
+      "actions": [
+        {
+          "name": "Check User Permissions_1",
+          "category": "User Action",
+          "type": "Check User Permissions",
+          "trueActions": [
+            {
+              "name": "Store Value in Variable",
+              "category": "Variable",
+              "type": "Store Value in Variable",
+              "messageActionRows": [],
+              "varname": "changelogs_version",
+              "vartype": "Text",
+              "savevartype": "temp",
+              "param": "1"
+            },
+            {
+              "name": "Store Value in Variable_1",
+              "category": "Variable",
+              "type": "Store Value in Variable",
+              "messageActionRows": [],
+              "varname": "changelogs_description",
+              "vartype": "Text",
+              "savevartype": "temp",
+              "param": "2+"
+            },
+            {
+              "name": "Send Embed Changelogs",
+              "category": "Message",
+              "type": "Send Embed",
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "color": "AAAAAA",
+              "title": "Changelog ${tempVars.changelogs_version}",
+              "url": "",
+              "authorname": "",
+              "authorimageurl": "",
+              "authorlink": "",
+              "description": "${tempVars.changelogs_description}",
+              "thumbnail": "https://eventsbot.weebly.com/uploads/1/2/3/5/123512837/depositphotos-97489290-stock-illustration-repair-service-icon_orig.jpg",
+              "image": "",
+              "footer": "${dbsVars.guild.name}",
+              "timestamp": "BOOL_TRUE@@",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            },
+            {
+              "name": "Delete changelogs command",
+              "category": "Message",
+              "type": "Delete Message",
+              "messageActionRows": [],
+              "varname": "${dbsVars.CommandMessage.id}",
+              "channelname": "${dbsVars.CommandChannel.id}"
+            }
+          ],
+          "falseActions": [],
+          "messageActionRows": [],
+          "user": "${dbsVars.CommandAuthor.id}",
+          "permissions": [
+            "ADMINISTRATOR"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "invite",
+      "actions": [
+        {
+          "name": "Send Embed Invite",
+          "category": "Message",
+          "type": "Send Embed",
+          "messageActionRows": [],
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "520F94",
+          "title": "",
+          "url": "",
+          "authorname": "🔗  | Click Here to invite Events",
+          "authorimageurl": "",
+          "authorlink": "https://discord.com/api/oauth2/authorize?client_id=972564503747264613&permissions=8&scope=bot",
+          "description": "",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "say",
+      "actions": [
+        {
+          "name": "Check User Permissions_2",
+          "category": "User Action",
+          "type": "Check User Permissions",
+          "trueActions": [
+            {
+              "name": "Store Value in Variable_2",
+              "category": "Variable",
+              "type": "Store Value in Variable",
+              "messageActionRows": [],
+              "varname": "say_embed_or_normal",
+              "vartype": "Text",
+              "savevartype": "temp",
+              "param": "1"
+            },
+            {
+              "name": "Store Value in Variable_3",
+              "category": "Variable",
+              "type": "Store Value in Variable",
+              "messageActionRows": [],
+              "varname": "say_message",
+              "vartype": "Text",
+              "savevartype": "temp",
+              "param": "2+"
+            },
+            {
+              "name": "Check Variable Value",
+              "category": "Variable",
+              "type": "Check Variable Value",
+              "trueActions": [
+                {
+                  "name": "Check If Variable Exists",
+                  "category": "Variable",
+                  "type": "Check If Variable Exists",
+                  "trueActions": [
+                    {
+                      "name": "Send Normal Message Say",
+                      "category": "Message",
+                      "type": "Send Message",
+                      "messageActionRows": [],
+                      "channelname": "${dbsVars.CommandChannel.id}",
+                      "messagetext": "${tempVars.say_message}",
+                      "savetovariable": "",
+                      "savetovariabletype": "temp"
+                    }
+                  ],
+                  "falseActions": [
+                    {
+                      "name": "Send Message Error_1",
+                      "category": "Message",
+                      "type": "Send Message",
+                      "messageActionRows": [],
+                      "channelname": "${dbsVars.CommandChannel.id}",
+                      "messagetext": "**ERROR 433**\nYou didn't enter a message. Enter the message that **Events** should send after choosing embed or normal.\n\nPlease try again.",
+                      "savetovariable": "error_message_say",
+                      "savetovariabletype": "temp"
+                    },
+                    {
+                      "name": "Wait 5s",
+                      "category": "Bot Action",
+                      "type": "Edited Wait",
+                      "messageActionRows": [],
+                      "seconds": "10"
+                    },
+                    {
+                      "name": "Delete ERROR Message Say",
+                      "category": "Message",
+                      "type": "Delete Message",
+                      "messageActionRows": [],
+                      "varname": "${tempVars.error_message_say.id}",
+                      "channelname": "${dbsVars.CommandChannel.id}"
+                    }
+                  ],
+                  "messageActionRows": [],
+                  "varname": "say_message",
+                  "savevartype": "temp"
+                }
+              ],
+              "falseActions": [
+                {
+                  "name": "Check Variable Value_1",
+                  "category": "Variable",
+                  "type": "Check Variable Value",
+                  "trueActions": [
+                    {
+                      "name": "Check If Variable Exists",
+                      "category": "Variable",
+                      "type": "Check If Variable Exists",
+                      "trueActions": [
+                        {
+                          "name": "Send Normal Message Say",
+                          "category": "Message",
+                          "type": "Send Message",
+                          "messageActionRows": [],
+                          "channelname": "${dbsVars.CommandChannel.id}",
+                          "messagetext": "${tempVars.say_message}",
+                          "savetovariable": "",
+                          "savetovariabletype": "temp"
+                        }
+                      ],
+                      "falseActions": [
+                        {
+                          "name": "Send Message Error_1",
+                          "category": "Message",
+                          "type": "Send Message",
+                          "messageActionRows": [],
+                          "channelname": "${dbsVars.CommandChannel.id}",
+                          "messagetext": "**ERROR 433**\nYou didn't enter a message. Enter the message that **Events** should send after choosing embed or normal.\n\nPlease try again.",
+                          "savetovariable": "error_message_say",
+                          "savetovariabletype": "temp"
+                        },
+                        {
+                          "name": "Wait 5s",
+                          "category": "Bot Action",
+                          "type": "Edited Wait",
+                          "messageActionRows": [],
+                          "seconds": "10"
+                        },
+                        {
+                          "name": "Delete ERROR Message Say",
+                          "category": "Message",
+                          "type": "Delete Message",
+                          "messageActionRows": [],
+                          "varname": "${tempVars.error_message_say.id}",
+                          "channelname": "${dbsVars.CommandChannel.id}"
+                        }
+                      ],
+                      "messageActionRows": [],
+                      "varname": "say_message",
+                      "savevartype": "temp"
+                    }
+                  ],
+                  "falseActions": [
+                    {
+                      "name": "Check Variable Value_2",
+                      "category": "Variable",
+                      "type": "Check Variable Value",
+                      "trueActions": [
+                        {
+                          "name": "Check If Variable Exists_1",
+                          "category": "Variable",
+                          "type": "Check If Variable Exists",
+                          "trueActions": [
+                            {
+                              "name": "Send Embed Message Say",
+                              "category": "Message",
+                              "type": "Send Embed",
+                              "messageActionRows": [],
+                              "channelname": "${dbsVars.CommandChannel.id}",
+                              "color": "520F94",
+                              "title": "",
+                              "url": "",
+                              "authorname": "",
+                              "authorimageurl": "",
+                              "authorlink": "",
+                              "description": "${tempVars.say_message}",
+                              "thumbnail": "",
+                              "image": "",
+                              "footer": "",
+                              "timestamp": "false",
+                              "savetovariable": "",
+                              "savetovariabletype": "temp"
+                            }
+                          ],
+                          "falseActions": [
+                            {
+                              "name": "Send Message Error_1",
+                              "category": "Message",
+                              "type": "Send Message",
+                              "messageActionRows": [],
+                              "channelname": "${dbsVars.CommandChannel.id}",
+                              "messagetext": "**ERROR 433**\nYou didn't enter a message. Enter the message that **Events** should send after choosing embed or normal.\n\nPlease try again.",
+                              "savetovariable": "error_message_say",
+                              "savetovariabletype": "temp"
+                            },
+                            {
+                              "name": "Wait 5s",
+                              "category": "Bot Action",
+                              "type": "Edited Wait",
+                              "messageActionRows": [],
+                              "seconds": "10"
+                            },
+                            {
+                              "name": "Delete ERROR Message Say",
+                              "category": "Message",
+                              "type": "Delete Message",
+                              "messageActionRows": [],
+                              "varname": "${tempVars.error_message_say.id}",
+                              "channelname": "${dbsVars.CommandChannel.id}"
+                            }
+                          ],
+                          "messageActionRows": [],
+                          "varname": "say_message",
+                          "savevartype": "temp"
+                        }
+                      ],
+                      "falseActions": [
+                        {
+                          "name": "Check Variable Value_3",
+                          "category": "Variable",
+                          "type": "Check Variable Value",
+                          "trueActions": [
+                            {
+                              "name": "Check If Variable Exists_1",
+                              "category": "Variable",
+                              "type": "Check If Variable Exists",
+                              "trueActions": [
+                                {
+                                  "name": "Send Embed Message Say",
+                                  "category": "Message",
+                                  "type": "Send Embed",
+                                  "messageActionRows": [],
+                                  "channelname": "${dbsVars.CommandChannel.id}",
+                                  "color": "520F94",
+                                  "title": "",
+                                  "url": "",
+                                  "authorname": "",
+                                  "authorimageurl": "",
+                                  "authorlink": "",
+                                  "description": "${tempVars.say_message}",
+                                  "thumbnail": "",
+                                  "image": "",
+                                  "footer": "",
+                                  "timestamp": "false",
+                                  "savetovariable": "",
+                                  "savetovariabletype": "temp"
+                                }
+                              ],
+                              "falseActions": [
+                                {
+                                  "name": "Send Message Error_1",
+                                  "category": "Message",
+                                  "type": "Send Message",
+                                  "messageActionRows": [],
+                                  "channelname": "${dbsVars.CommandChannel.id}",
+                                  "messagetext": "**ERROR 433**\nYou didn't enter a message. Enter the message that **Events** should send after choosing embed or normal.\n\nPlease try again.",
+                                  "savetovariable": "error_message_say",
+                                  "savetovariabletype": "temp"
+                                },
+                                {
+                                  "name": "Wait 5s",
+                                  "category": "Bot Action",
+                                  "type": "Edited Wait",
+                                  "messageActionRows": [],
+                                  "seconds": "10"
+                                },
+                                {
+                                  "name": "Delete ERROR Message Say",
+                                  "category": "Message",
+                                  "type": "Delete Message",
+                                  "messageActionRows": [],
+                                  "varname": "${tempVars.error_message_say.id}",
+                                  "channelname": "${dbsVars.CommandChannel.id}"
+                                }
+                              ],
+                              "messageActionRows": [],
+                              "varname": "say_message",
+                              "savevartype": "temp"
+                            }
+                          ],
+                          "falseActions": [
+                            {
+                              "name": "Send Message Error",
+                              "category": "Message",
+                              "type": "Send Message",
+                              "messageActionRows": [],
+                              "channelname": "${dbsVars.CommandChannel.id}",
+                              "messagetext": "Please choose **one** of the following options:\n- **Embed**\n- **Normal**\nPlease try again.",
+                              "savetovariable": "error_message_say",
+                              "savetovariabletype": "temp"
+                            },
+                            {
+                              "name": "Wait 5s",
+                              "category": "Bot Action",
+                              "type": "Edited Wait",
+                              "messageActionRows": [],
+                              "seconds": "10"
+                            },
+                            {
+                              "name": "Delete ERROR Message Say",
+                              "category": "Message",
+                              "type": "Delete Message",
+                              "messageActionRows": [],
+                              "varname": "${tempVars.error_message_say.id}",
+                              "channelname": "${dbsVars.CommandChannel.id}"
+                            }
+                          ],
+                          "messageActionRows": [],
+                          "varname": "say_embed_or_normal",
+                          "savevartype": "temp",
+                          "compare": "equal to",
+                          "value": "embed"
+                        }
+                      ],
+                      "messageActionRows": [],
+                      "varname": "say_embed_or_normal",
+                      "savevartype": "temp",
+                      "compare": "equal to",
+                      "value": "Embed"
+                    }
+                  ],
+                  "messageActionRows": [],
+                  "varname": "say_embed_or_normal",
+                  "savevartype": "temp",
+                  "compare": "equal to",
+                  "value": "normal"
+                }
+              ],
+              "messageActionRows": [],
+              "varname": "say_embed_or_normal",
+              "savevartype": "temp",
+              "compare": "equal to",
+              "value": "Normal"
+            }
+          ],
+          "falseActions": [],
+          "messageActionRows": [],
+          "user": "${dbsVars.CommandAuthor.id}",
+          "permissions": [
+            "VIEW_AUDIT_LOG"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "help",
+      "actions": [
+        {
+          "name": "Check User Permissions",
+          "category": "User Action",
+          "type": "Check User Permissions",
+          "trueActions": [
+            {
+              "name": "Help",
+              "category": "Message",
+              "type": "Send Embed",
+              "fields": [
+                {
+                  "name": "🌍 | General",
+                  "value": "See all general commands.\n**!help-general**",
+                  "inline": "false"
+                },
+                {
+                  "name": "🎪 | Events",
+                  "value": "See all events commands.\n**!help-events**",
+                  "inline": "false"
+                },
+                {
+                  "name": "👮‍♂️ | Moderation",
+                  "value": "See all moderation commands.\n**!help-moderation**",
+                  "inline": "false"
+                },
+                {
+                  "name": "📊 | Customization",
+                  "value": "See all customization commands.\n**!help-customization**",
+                  "inline": "true"
+                }
+              ],
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "color": "520F94",
+              "title": "👑 | Events Help",
+              "url": "",
+              "authorname": "",
+              "authorimageurl": "",
+              "authorlink": "",
+              "description": "",
+              "thumbnail": "",
+              "image": "",
+              "footer": "",
+              "timestamp": "false",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "falseActions": [],
+          "messageActionRows": [],
+          "user": "${dbsVars.CommandAuthor.id}",
+          "permissions": [
+            "VIEW_AUDIT_LOG"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "poll-generate",
+      "perms": [],
+      "actions": [
+        {
+          "name": "Check User Permissions_4",
+          "category": "User Action",
+          "type": "Check User Permissions",
+          "trueActions": [
+            {
+              "name": "Check Variable Value_4",
+              "category": "Variable",
+              "type": "Check Variable Value",
+              "trueActions": [
+                {
+                  "name": "Send Poll_2",
+                  "category": "Message",
+                  "type": "Send Embed",
+                  "messageActionRows": [],
+                  "channelname": "${dbsVars.CommandChannel.id}",
+                  "color": "0FC0EA",
+                  "title": "📊 | **${tempVars.poll_title}**",
+                  "url": "",
+                  "authorname": "",
+                  "authorimageurl": "",
+                  "authorlink": "",
+                  "description": "${tempVars.poll_description}\n\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}",
+                  "thumbnail": "",
+                  "image": "",
+                  "footer": "Asked to ${dbsVars.guild.memberCount} Members",
+                  "timestamp": "BOOL_TRUE@@",
+                  "savetovariable": "poll_2",
+                  "savetovariabletype": "temp"
+                },
+                {
+                  "name": "Reaction Listener Poll_2",
+                  "category": "Reaction",
+                  "type": "Add Reaction Listener",
+                  "reactionActions": {
+                    "1️⃣": [],
+                    "2️⃣": []
+                  },
+                  "messageActionRows": [],
+                  "message": "${tempVars.poll_2.id}",
+                  "duration": "0",
+                  "reactionemoji": "poll_2_emoji",
+                  "reactionuser": "poll_2_user",
+                  "react": "BOOL_TRUE@@"
+                },
+                {
+                  "name": "GRN_5",
+                  "category": "Variable",
+                  "type": "Generate Random Number",
+                  "messageActionRows": [],
+                  "varname": "poll_option_count",
+                  "min": "0",
+                  "max": "0",
+                  "savevartype": "temp"
+                },
+                {
+                  "name": "Send Embed Poll Logs",
+                  "category": "Message",
+                  "type": "Send Embed",
+                  "fields": [
+                    {
+                      "name": "Created by:",
+                      "value": "<@${dbsVars.CommandAuthor.id}>\n`(${dbsVars.CommandAuthor.id})`",
+                      "inline": "true"
+                    },
+                    {
+                      "name": "Poll:",
+                      "value": "${tempVars.poll_2.url}",
+                      "inline": "true"
+                    }
+                  ],
+                  "messageActionRows": [],
+                  "channelname": "${serverVars.log_channel}",
+                  "color": "520F94",
+                  "title": "📊 | Poll Log",
+                  "url": "",
+                  "authorname": "",
+                  "authorimageurl": "",
+                  "authorlink": "",
+                  "description": "",
+                  "thumbnail": "",
+                  "image": "",
+                  "footer": "",
+                  "timestamp": "false",
+                  "savetovariable": "",
+                  "savetovariabletype": "temp"
+                }
+              ],
+              "falseActions": [
+                {
+                  "name": "Check Variable Value_4_1",
+                  "category": "Variable",
+                  "type": "Check Variable Value",
+                  "trueActions": [
+                    {
+                      "name": "Send Poll_3",
+                      "category": "Message",
+                      "type": "Send Embed",
+                      "messageActionRows": [],
+                      "channelname": "${dbsVars.CommandChannel.id}",
+                      "color": "0FC0EA",
+                      "title": "📊 | **${tempVars.poll_title}**",
+                      "url": "",
+                      "authorname": "",
+                      "authorimageurl": "",
+                      "authorlink": "",
+                      "description": "${tempVars.poll_description}\n\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}",
+                      "thumbnail": "",
+                      "image": "",
+                      "footer": "Asked to ${dbsVars.guild.memberCount} Members",
+                      "timestamp": "BOOL_TRUE@@",
+                      "savetovariable": "poll_3",
+                      "savetovariabletype": "temp"
+                    },
+                    {
+                      "name": "Reaction Listener Poll_3",
+                      "category": "Reaction",
+                      "type": "Add Reaction Listener",
+                      "reactionActions": {
+                        "1️⃣": [],
+                        "2️⃣": [],
+                        "3️⃣": []
+                      },
+                      "messageActionRows": [],
+                      "message": "${tempVars.poll_3.id}",
+                      "duration": "0",
+                      "reactionemoji": "poll_3_emoji",
+                      "reactionuser": "poll_3_user",
+                      "react": "BOOL_TRUE@@"
+                    },
+                    {
+                      "name": "GRN_5",
+                      "category": "Variable",
+                      "type": "Generate Random Number",
+                      "messageActionRows": [],
+                      "varname": "poll_option_count",
+                      "min": "0",
+                      "max": "0",
+                      "savevartype": "temp"
+                    },
+                    {
+                      "name": "Send Embed Poll Logs",
+                      "category": "Message",
+                      "type": "Send Embed",
+                      "fields": [
+                        {
+                          "name": "Created by:",
+                          "value": "<@${dbsVars.CommandAuthor.id}>\n`(${dbsVars.CommandAuthor.id})`",
+                          "inline": "true"
+                        },
+                        {
+                          "name": "Poll:",
+                          "value": "${tempVars.poll_2.url}",
+                          "inline": "true"
+                        }
+                      ],
+                      "messageActionRows": [],
+                      "channelname": "${serverVars.log_channel}",
+                      "color": "520F94",
+                      "title": "📊 | Poll Log",
+                      "url": "",
+                      "authorname": "",
+                      "authorimageurl": "",
+                      "authorlink": "",
+                      "description": "",
+                      "thumbnail": "",
+                      "image": "",
+                      "footer": "",
+                      "timestamp": "false",
+                      "savetovariable": "",
+                      "savetovariabletype": "temp"
+                    }
+                  ],
+                  "falseActions": [
+                    {
+                      "name": "Check Variable Value_4_2",
+                      "category": "Variable",
+                      "type": "Check Variable Value",
+                      "trueActions": [
+                        {
+                          "name": "Send Poll_4",
+                          "category": "Message",
+                          "type": "Send Embed",
+                          "messageActionRows": [],
+                          "channelname": "${dbsVars.CommandChannel.id}",
+                          "color": "0FC0EA",
+                          "title": "📊 | **${tempVars.poll_title}**",
+                          "url": "",
+                          "authorname": "",
+                          "authorimageurl": "",
+                          "authorlink": "",
+                          "description": "${tempVars.poll_description}\n\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = ${tempVars.poll_option_4}",
+                          "thumbnail": "",
+                          "image": "",
+                          "footer": "Asked to ${dbsVars.guild.memberCount} Members",
+                          "timestamp": "BOOL_TRUE@@",
+                          "savetovariable": "poll_4",
+                          "savetovariabletype": "temp"
+                        },
+                        {
+                          "name": "Reaction Listener Poll_4",
+                          "category": "Reaction",
+                          "type": "Add Reaction Listener",
+                          "reactionActions": {
+                            "1️⃣": [],
+                            "2️⃣": [],
+                            "3️⃣": [],
+                            "4️⃣": []
+                          },
+                          "messageActionRows": [],
+                          "message": "${tempVars.poll_4.id}",
+                          "duration": "0",
+                          "reactionemoji": "poll_4_emoji",
+                          "reactionuser": "poll_4_user",
+                          "react": "BOOL_TRUE@@"
+                        },
+                        {
+                          "name": "GRN_5",
+                          "category": "Variable",
+                          "type": "Generate Random Number",
+                          "messageActionRows": [],
+                          "varname": "poll_option_count",
+                          "min": "0",
+                          "max": "0",
+                          "savevartype": "temp"
+                        },
+                        {
+                          "name": "Send Embed Poll Logs",
+                          "category": "Message",
+                          "type": "Send Embed",
+                          "fields": [
+                            {
+                              "name": "Created by:",
+                              "value": "<@${dbsVars.CommandAuthor.id}>\n`(${dbsVars.CommandAuthor.id})`",
+                              "inline": "true"
+                            },
+                            {
+                              "name": "Poll:",
+                              "value": "${tempVars.poll_2.url}",
+                              "inline": "true"
+                            }
+                          ],
+                          "messageActionRows": [],
+                          "channelname": "${serverVars.log_channel}",
+                          "color": "520F94",
+                          "title": "📊 | Poll Log",
+                          "url": "",
+                          "authorname": "",
+                          "authorimageurl": "",
+                          "authorlink": "",
+                          "description": "",
+                          "thumbnail": "",
+                          "image": "",
+                          "footer": "",
+                          "timestamp": "false",
+                          "savetovariable": "",
+                          "savetovariabletype": "temp"
+                        }
+                      ],
+                      "falseActions": [
+                        {
+                          "name": "Check Variable Value_4_3",
+                          "category": "Variable",
+                          "type": "Check Variable Value",
+                          "trueActions": [
+                            {
+                              "name": "Send Poll_5",
+                              "category": "Message",
+                              "type": "Send Embed",
+                              "messageActionRows": [],
+                              "channelname": "${dbsVars.CommandChannel.id}",
+                              "color": "0FC0EA",
+                              "title": "📊 | **${tempVars.poll_title}**",
+                              "url": "",
+                              "authorname": "",
+                              "authorimageurl": "",
+                              "authorlink": "",
+                              "description": "${tempVars.poll_description}\n\n1️⃣ = ${tempVars.poll_option_1}\n2️⃣ = ${tempVars.poll_option_2}\n3️⃣ = ${tempVars.poll_option_3}\n4️⃣ = ${tempVars.poll_option_4}\n5️⃣ = ${tempVars.poll_option_5}",
+                              "thumbnail": "",
+                              "image": "",
+                              "footer": "Asked to ${dbsVars.guild.memberCount} Members",
+                              "timestamp": "BOOL_TRUE@@",
+                              "savetovariable": "poll_5",
+                              "savetovariabletype": "temp"
+                            },
+                            {
+                              "name": "Reaction Listener Poll_5",
+                              "category": "Reaction",
+                              "type": "Add Reaction Listener",
+                              "reactionActions": {
+                                "1️⃣": [],
+                                "2️⃣": [],
+                                "3️⃣": [],
+                                "4️⃣": [],
+                                "5️⃣": []
+                              },
+                              "messageActionRows": [],
+                              "message": "${tempVars.poll_5.id}",
+                              "duration": "0",
+                              "reactionemoji": "poll_5_emoji",
+                              "reactionuser": "poll_5_user",
+                              "react": "BOOL_TRUE@@"
+                            },
+                            {
+                              "name": "GRN_5",
+                              "category": "Variable",
+                              "type": "Generate Random Number",
+                              "messageActionRows": [],
+                              "varname": "poll_option_count",
+                              "min": "0",
+                              "max": "0",
+                              "savevartype": "temp"
+                            },
+                            {
+                              "name": "Send Embed Poll Logs",
+                              "category": "Message",
+                              "type": "Send Embed",
+                              "fields": [
+                                {
+                                  "name": "Created by:",
+                                  "value": "<@${dbsVars.CommandAuthor.id}>\n`(${dbsVars.CommandAuthor.id})`",
+                                  "inline": "true"
+                                },
+                                {
+                                  "name": "Poll:",
+                                  "value": "${tempVars.poll_2.url}",
+                                  "inline": "true"
+                                }
+                              ],
+                              "messageActionRows": [],
+                              "channelname": "${serverVars.log_channel}",
+                              "color": "520F94",
+                              "title": "📊 | Poll Log",
+                              "url": "",
+                              "authorname": "",
+                              "authorimageurl": "",
+                              "authorlink": "",
+                              "description": "",
+                              "thumbnail": "",
+                              "image": "",
+                              "footer": "",
+                              "timestamp": "false",
+                              "savetovariable": "",
+                              "savetovariabletype": "temp"
+                            }
+                          ],
+                          "falseActions": [],
+                          "messageActionRows": [],
+                          "varname": "poll_option_count",
+                          "savevartype": "temp",
+                          "compare": "equal to",
+                          "value": "5"
+                        }
+                      ],
+                      "messageActionRows": [],
+                      "varname": "poll_option_count",
+                      "savevartype": "temp",
+                      "compare": "equal to",
+                      "value": "4"
+                    }
+                  ],
+                  "messageActionRows": [],
+                  "varname": "poll_option_count",
+                  "savevartype": "temp",
+                  "compare": "equal to",
+                  "value": "3"
+                }
+              ],
+              "messageActionRows": [],
+              "varname": "poll_option_count",
+              "savevartype": "temp",
+              "compare": "equal to",
+              "value": "2"
+            }
+          ],
+          "falseActions": [],
+          "messageActionRows": [],
+          "user": "${dbsVars.CommandAuthor.id}",
+          "permissions": [
+            "MANAGE_CHANNELS",
+            "MENTION_EVERYONE"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "clear",
+      "actions": [
+        {
+          "name": "Check User Permissions_9",
+          "category": "User Action",
+          "type": "Check User Permissions",
+          "trueActions": [
+            {
+              "name": "Get Number of Messages",
+              "category": "Variable",
+              "type": "Store Value in Variable",
+              "messageActionRows": [],
+              "varname": "clear_message_count",
+              "vartype": "Number",
+              "savevartype": "temp",
+              "param": "1"
+            },
+            {
+              "name": "Delete All Clear Messages",
+              "category": "Channel Action",
+              "type": "Delete All Messages",
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "msgcount": "${tempVars.clear_message_count}"
+            }
+          ],
+          "falseActions": [],
+          "messageActionRows": [],
+          "user": "${dbsVars.CommandAuthor.id}",
+          "permissions": [
+            "MANAGE_MESSAGES"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "help-general",
+      "actions": [
+        {
+          "name": "Check User Permissions_5",
+          "category": "User Action",
+          "type": "Check User Permissions",
+          "trueActions": [
+            {
+              "name": "Help General",
+              "category": "Message",
+              "type": "Send Embed",
+              "fields": [
+                {
+                  "name": "❓ | Help",
+                  "value": "Shows this menu\n**Usage:** `!help`",
+                  "inline": "false"
+                },
+                {
+                  "name": "🔗 | Invite",
+                  "value": "Sends a invite link\n**Usage:** `!invite`",
+                  "inline": "false"
+                },
+                {
+                  "name": "🙊 | Say",
+                  "value": "Make the bot send a Embed or Normal message\n**Usage:** `!say <embed/normal> <message>`\n**Required permissions:** `View Audit Log`",
+                  "inline": "true"
+                }
+              ],
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "color": "520F94",
+              "title": "👑 | Help General",
+              "url": "",
+              "authorname": "",
+              "authorimageurl": "",
+              "authorlink": "",
+              "description": "",
+              "thumbnail": "",
+              "image": "",
+              "footer": "",
+              "timestamp": "false",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "falseActions": [],
+          "messageActionRows": [],
+          "user": "${dbsVars.CommandAuthor.id}",
+          "permissions": [
+            "VIEW_AUDIT_LOG"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "help-customization",
+      "actions": [
+        {
+          "name": "Check User Permissions_6",
+          "category": "User Action",
+          "type": "Check User Permissions",
+          "trueActions": [
+            {
+              "name": "Help Customization",
+              "category": "Message",
+              "type": "Send Embed",
+              "fields": [
+                {
+                  "name": "⚙️ | Settings",
+                  "value": "See your bot settings.\n**Usage:** `!settings`\n**Required permissions:** `Administrator`",
+                  "inline": "false"
+                },
+                {
+                  "name": "📂 | Setlogs",
+                  "value": "Set your log channel.\n**Usage:** `!setlogs <channel>`\n**Required permissions:** `Administrator`",
+                  "inline": "false"
+                }
+              ],
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "color": "520F94",
+              "title": "📊 | Help Customization",
+              "url": "",
+              "authorname": "",
+              "authorimageurl": "",
+              "authorlink": "",
+              "description": "",
+              "thumbnail": "",
+              "image": "",
+              "footer": "",
+              "timestamp": "false",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "falseActions": [],
+          "messageActionRows": [],
+          "user": "${dbsVars.CommandAuthor.id}",
+          "permissions": [
+            "VIEW_AUDIT_LOG"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "help-events",
+      "actions": [
+        {
+          "name": "Check User Permissions_7",
+          "category": "User Action",
+          "type": "Check User Permissions",
+          "trueActions": [
+            {
+              "name": "Help Events",
+              "category": "Message",
+              "type": "Send Embed",
+              "fields": [
+                {
+                  "name": "📊 | Poll",
+                  "value": "Create a poll that can have up to 5 options.\n**Usage:** `!poll`\n**Required permissions:** `Administrator`",
+                  "inline": "false"
+                },
+                {
+                  "name": "🔧 | Changelogs",
+                  "value": "Sends a embed message to the channel the command was send in.\n**Usage:** `!changelog <version> <description>`\n**Required permissions:** `Mannage Channels, Mention Everyone`",
+                  "inline": "true"
+                }
+              ],
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "color": "520F94",
+              "title": "👑 | Help Events",
+              "url": "",
+              "authorname": "",
+              "authorimageurl": "",
+              "authorlink": "",
+              "description": "",
+              "thumbnail": "",
+              "image": "",
+              "footer": "",
+              "timestamp": "false",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "falseActions": [],
+          "messageActionRows": [],
+          "user": "${dbsVars.CommandAuthor.id}",
+          "permissions": [
+            "VIEW_AUDIT_LOG"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "settings",
+      "actions": [
+        {
+          "name": "Check User Permissions_11",
+          "category": "User Action",
+          "type": "Check User Permissions",
+          "trueActions": [
+            {
+              "name": "Send Embed Settings",
+              "category": "Message",
+              "type": "Send Embed",
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "color": "520F94",
+              "title": "⚙️ | Settings",
+              "url": "",
+              "authorname": "",
+              "authorimageurl": "",
+              "authorlink": "",
+              "description": "Prefix: **!**\nLog Channel: <#${serverVars.log_channel}>",
+              "thumbnail": "",
+              "image": "",
+              "footer": "",
+              "timestamp": "false",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "falseActions": [],
+          "messageActionRows": [],
+          "user": "${dbsVars.CommandAuthor.id}",
+          "permissions": [
+            "ADMINISTRATOR"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "setlogs",
+      "actions": [
+        {
+          "name": "Check User Permissions_10",
+          "category": "User Action",
+          "type": "Check User Permissions",
+          "trueActions": [
+            {
+              "name": "Get Log Channel",
+              "category": "Variable",
+              "type": "Get Mentioned Channel",
+              "messageActionRows": [],
+              "varname": "log_channel",
+              "vartype": "server"
+            },
+            {
+              "name": "Send Get Log Channel Message",
+              "category": "Message",
+              "type": "Send Message",
+              "messageActionRows": [],
+              "channelname": "${serverVars.log_channel}",
+              "messagetext": "<@${dbsVars.CommandAuthor.id}> has set the log channel to <#${serverVars.log_channel}>",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "falseActions": [],
+          "messageActionRows": [],
+          "user": "${dbsVars.CommandAuthor.id}",
+          "permissions": [
+            "ADMINISTRATOR"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "help-moderation",
+      "actions": [
+        {
+          "name": "Check User Permissions_8",
+          "category": "User Action",
+          "type": "Check User Permissions",
+          "trueActions": [
+            {
+              "name": "Help Moderation",
+              "category": "Message",
+              "type": "Send Embed",
+              "fields": [
+                {
+                  "name": "❌ | Clear",
+                  "value": "Remove a number of messages\n**Usage:** `!clear <number of messages>`\n**Required permissions:** `Manage Messages`\n",
+                  "inline": "false"
+                }
+              ],
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "color": "520F94",
+              "title": "👮‍♂️ | Help Moderation",
+              "url": "",
+              "authorname": "",
+              "authorimageurl": "",
+              "authorlink": "",
+              "description": "",
+              "thumbnail": "",
+              "image": "",
+              "footer": "",
+              "timestamp": "false",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "falseActions": [],
+          "messageActionRows": [],
+          "user": "${dbsVars.CommandAuthor.id}",
+          "permissions": [
+            "VIEW_AUDIT_LOG"
+          ]
+        }
+      ]
+    }
+  ]
+}

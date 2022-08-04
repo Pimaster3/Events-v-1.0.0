@@ -1,0 +1,51 @@
+[{
+  "996813449554296903": "1",
+  "1000537590321123428": "2"
+},{
+  "poll": "3",
+  "poll_channel": "4"
+},{
+  "log_channel": "5"
+},{
+  "channelId": "6",
+  "guildId": "7",
+  "deleted": false,
+  "id": "8",
+  "type": "9",
+  "system": false,
+  "content": "10",
+  "authorId": "11",
+  "pinned": false,
+  "tts": false,
+  "nonce": null,
+  "embeds": "12",
+  "components": "13",
+  "attachments": "14",
+  "stickers": "15",
+  "createdTimestamp": 1658441461850,
+  "editedTimestamp": null,
+  "webhookId": null,
+  "groupActivityApplicationId": null,
+  "applicationId": null,
+  "activity": null,
+  "flags": 0,
+  "reference": null,
+  "interaction": null,
+  "cleanContent": "10"
+},"999779162279641098","1003396909131628554","999359992132026448","996813449554296903","999800698201968721","DEFAULT","","972564503747264613",[
+  "16"
+],[],[],[],{
+  "type": "17",
+  "title": "18",
+  "description": "19",
+  "url": null,
+  "color": 1032426,
+  "timestamp": null,
+  "fields": "20",
+  "thumbnail": null,
+  "image": null,
+  "video": null,
+  "author": null,
+  "provider": null,
+  "footer": null
+},"rich","**dfd**","df\n\n1️⃣ = `!setup-poll-channel <#999779162279641098>`\n2️⃣ = `d`",[]]
